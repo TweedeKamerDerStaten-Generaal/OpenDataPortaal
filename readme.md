@@ -12,7 +12,7 @@ Voor de documentatie:
 
 - [opendata.tweedekamer.nl/documentatie](https://opendata.tweedekamer.nl/documentatie)
 
-Voor veelggestelde vragen:
+Voor veelgestelde vragen:
 
 - [opendata.tweedekamer.nl/veelgestelde-vragen](https://opendata.tweedekamer.nl/veelgestelde-vragen)
 
