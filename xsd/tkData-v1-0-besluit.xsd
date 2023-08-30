@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema
+  attributeFormDefault="unqualified"
+  elementFormDefault="qualified"
+  targetNamespace="http://www.tweedekamer.nl/xsd/tkData/v1-0"
+  xmlns="http://www.tweedekamer.nl/xsd/tkData/v1-0"
+  xmlns:tki="http://www.tweedekamer.nl/xsd/tkData-instantie/v1-0"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:include schemaLocation="tkData-v1-0-base.xsd"/>
+  <xs:include schemaLocation="tkData-v1-0-iso-8601.xsd"/>
+
+  <xs:import namespace="http://www.tweedekamer.nl/xsd/tkData-instantie/v1-0" schemaLocation="tkData-instantie-v1-0.xsd"/>
+
+  <xs:element name="besluit" type="besluitType"/>
+
+  <xs:complexType name="besluitType" final="#all">
+    <xs:complexContent>
+      <xs:extension base="entiteitType">
+        <xs:sequence>
+          <!-- Relaties -->
+          <xs:element name="agendapunt" minOccurs="0" maxOccurs="1" type="referentieLiteral"/>
+          <xs:element name="zaak" minOccurs="0" maxOccurs="unbounded" type="referentieLiteral"/>
+          <!-- Attributen -->        
+          <xs:element name="stemmingsSoort" minOccurs="0" maxOccurs="1" nillable="true" type="tokenType"/>
+          <xs:element name="besluitSoort" minOccurs="0" maxOccurs="1" nillable="true" type="tokenType"/>
+          <xs:element name="besluitTekst" minOccurs="0" maxOccurs="1" nillable="true" type="stringType"/>
+          <xs:element name="opmerking" minOccurs="0" maxOccurs="1" nillable="true" type="stringType"/>
+          <xs:element name="status" minOccurs="0" maxOccurs="1" nillable="true" type="tokenType"/>
+          <xs:element name="agendapuntZaakBesluitVolgorde" minOccurs="0" maxOccurs="1" nillable="true" type="intType"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema
+  elementFormDefault="qualified"
+  attributeFormDefault="unqualified"
+  targetNamespace="http://www.tweedekamer.nl/xsd/tkData/v1-0"
+  xmlns="http://www.tweedekamer.nl/xsd/tkData/v1-0"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <!-- Relaties -->
+  <xs:include schemaLocation="tkData-v1-0-persoon.xsd"/>
+  <xs:include schemaLocation="tkData-v1-0-persooncontactinformatie.xsd"/>
+  <xs:include schemaLocation="tkData-v1-0-persoongeschenk.xsd"/>
+  <xs:include schemaLocation="tkData-v1-0-persoonloopbaan.xsd"/>
+  <xs:include schemaLocation="tkData-v1-0-persoonnevenfunctie.xsd"/>
+  <xs:include schemaLocation="tkData-v1-0-persoonnevenfunctieinkomsten.xsd"/>
+  <xs:include schemaLocation="tkData-v1-0-persoononderwijs.xsd"/>
+  <xs:include schemaLocation="tkData-v1-0-persoonreis.xsd"/>
+  <xs:include schemaLocation="tkData-v1-0-activiteit.xsd"/>
+  <xs:include schemaLocation="tkData-v1-0-activiteitactor.xsd"/>
+  <xs:include schemaLocation="tkData-v1-0-agendapunt.xsd"/>
+  <xs:include schemaLocation="tkData-v1-0-besluit.xsd"/>
+  <xs:include schemaLocation="tkData-v1-0-commissie.xsd"/>
+  <xs:include schemaLocation="tkData-v1-0-commissiecontactinformatie.xsd"/>
+  <xs:include schemaLocation="tkData-v1-0-commissiezetel.xsd"/>
+  <xs:include schemaLocation="tkData-v1-0-commissiezetelvastpersoon.xsd"/>
+  <xs:include schemaLocation="tkData-v1-0-commissiezetelvastvacature.xsd"/>
+  <xs:include schemaLocation="tkData-v1-0-commissiezetelvervangerpersoon.xsd"/>
+  <xs:include schemaLocation="tkData-v1-0-commissiezetelvervangervacature.xsd"/>
+  <xs:include schemaLocation="tkData-v1-0-document.xsd"/>
+  <xs:include schemaLocation="tkData-v1-0-documentactor.xsd"/>
+  <xs:include schemaLocation="tkData-v1-0-documentversie.xsd"/>
+  <xs:include schemaLocation="tkData-v1-0-fractie.xsd"/>
+  <xs:include schemaLocation="tkData-v1-0-fractiezetel.xsd"/>
+  <xs:include schemaLocation="tkData-v1-0-fractiezetelpersoon.xsd"/>
+  <xs:include schemaLocation="tkData-v1-0-fractiezetelvacature.xsd"/>
+  <xs:include schemaLocation="tkData-v1-0-kamerstukdossier.xsd"/>
+  <xs:include schemaLocation="tkData-v1-0-reservering.xsd"/>
+  <xs:include schemaLocation="tkData-v1-0-stemming.xsd"/>
+  <xs:include schemaLocation="tkData-v1-0-toezegging.xsd"/>
+  <xs:include schemaLocation="tkData-v1-0-toezegging.xsd"/>  
+  <xs:include schemaLocation="tkData-v1-0-vergadering.xsd"/>
+  <xs:include schemaLocation="tkData-v1-0-verslag.xsd"/>
+  <xs:include schemaLocation="tkData-v1-0-zaak.xsd"/>
+  <xs:include schemaLocation="tkData-v1-0-zaakactor.xsd"/>
+  <xs:include schemaLocation="tkData-v1-0-zaal.xsd"/>
+  <!-- Resources -->
+  <xs:include schemaLocation="tkData-v1-0-resource.xsd"/>
+  <!-- Identiteit -->
+  <xs:include schemaLocation="tkData-v1-0-identiteit.xsd"/>
+</xs:schema>

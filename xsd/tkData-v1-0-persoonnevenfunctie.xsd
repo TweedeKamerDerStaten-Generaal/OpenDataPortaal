@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema
+  attributeFormDefault="unqualified"
+  elementFormDefault="qualified"
+  targetNamespace="http://www.tweedekamer.nl/xsd/tkData/v1-0"
+  xmlns="http://www.tweedekamer.nl/xsd/tkData/v1-0"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:include schemaLocation="tkData-v1-0-base.xsd"/>
+
+  <xs:element name="persoonNevenfunctie" type="persoonNevenfunctieType"/>
+
+  <xs:complexType name="persoonNevenfunctieType" final="#all">
+    <xs:complexContent>
+      <xs:extension base="entiteitType">
+        <xs:sequence>
+          <!-- Relaties -->
+          <xs:element name="persoon" minOccurs="0" maxOccurs="1" type="referentieLiteral"/>
+          <!-- Attributen -->
+          <xs:element name="omschrijving" minOccurs="0" maxOccurs="1" nillable="true" type="tokenType"/>
+          <xs:element name="isActief" minOccurs="0" maxOccurs="1" nillable="true" type="booleanType"/>
+          <xs:element name="periode" minOccurs="0" maxOccurs="1" nillable="true">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="van" minOccurs="0" maxOccurs="1" nillable="true" type="datumType"/>
+                <xs:element name="totEnMet" minOccurs="0" maxOccurs="1" nillable="true" type="datumType"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="vergoeding" minOccurs="0" maxOccurs="1" nillable="true">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="soort" minOccurs="0" maxOccurs="1" nillable="true" type="tokenType">
+                  <xs:annotation>
+                    <xs:documentation>Het soort vergoeding, bijv. bezoldigd, onbezoldigd of onkostenvergoeding.</xs:documentation>
+                  </xs:annotation>
+                </xs:element>
+                <xs:element name="toelichting" minOccurs="0" maxOccurs="1" nillable="true" type="tokenType">
+                  <xs:annotation>
+                    <xs:documentation>Optionele toelichting bij de soort vergoeding.</xs:documentation>
+                  </xs:annotation>
+                </xs:element>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="gewicht" minOccurs="0" maxOccurs="1" nillable="true" type="intType"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

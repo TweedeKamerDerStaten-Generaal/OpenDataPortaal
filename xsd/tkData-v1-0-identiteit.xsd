@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema
+  attributeFormDefault="unqualified"
+  elementFormDefault="qualified"
+  targetNamespace="http://www.tweedekamer.nl/xsd/tkData/v1-0"
+  xmlns="http://www.tweedekamer.nl/xsd/tkData/v1-0"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:include schemaLocation="tkData-v1-0-base.xsd"/>
+
+  <xs:element name="identiteit" type="identiteitType"/>
+  <xs:element name="aanduiding" type="aanduidingType"/>
+
+  <xs:complexType name="identiteitType">
+    <xs:choice>
+      <xs:sequence>
+        <xs:annotation>
+          <xs:documentation>De elementen in deze sequence beschrijven de identiteit in het informatiesysteem, bestaande uit de naam van de bron zelf en de waarde voor de sleutel die een begrip in de bron uniek identificeert.</xs:documentation>
+        </xs:annotation>
+        <xs:element name="bron">
+          <xs:simpleType>
+            <xs:restriction base="xs:token">
+              <xs:minLength value="1"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="sleutel">
+          <xs:simpleType>
+            <xs:restriction base="xs:token">
+              <xs:minLength value="1"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+      </xs:sequence>
+    </xs:choice>
+    <xs:attribute name="aanduiding" use="required" type="aanduidingType">
+      <xs:annotation>
+        <xs:documentation>Een aanduiding ziet men in de entiteiten terug als de attributen @id en @ref. @aanduiding is van het type tk:aanduidingType. Dit is belangrijke informatie, aangezien tk:aanduidingType ook de base class is van tk:idType en tk:refType. Een aanduiding kan meerdere malen voorkomen in verschillende identiteiten. Dit komt omdat 1 aanduiding (na consolidatie in het Gegevensmagazijn) kan overeenkomen met meerdere identiteiten uit verschillende informatiesystemen.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+</xs:schema>

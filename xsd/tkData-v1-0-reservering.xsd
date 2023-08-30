@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema
+  elementFormDefault="qualified"
+  attributeFormDefault="unqualified"
+  targetNamespace="http://www.tweedekamer.nl/xsd/tkData/v1-0"
+  xmlns="http://www.tweedekamer.nl/xsd/tkData/v1-0"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:include schemaLocation="tkData-v1-0-base.xsd"/>
+
+  <xs:element name="reservering" type="reserveringType"/>
+
+  <xs:complexType name="reserveringType" final="#all">
+    <xs:complexContent>
+      <xs:extension base="entiteitType">
+        <xs:sequence>
+          <!-- Relaties -->
+          <xs:element name="activiteit" minOccurs="0" maxOccurs="unbounded" type="referentieLiteral"/>
+          <xs:element name="zaal" minOccurs="0" maxOccurs="1" type="referentieLiteral"/>
+          <!-- Attributen -->
+          <xs:element name="nummer" minOccurs="0" maxOccurs="1" nillable="true" type="tokenType"/>
+          <xs:element name="statusCode" minOccurs="0" maxOccurs="1" nillable="true" type="tokenType"/>
+          <xs:element name="statusNaam" minOccurs="0" maxOccurs="1" nillable="true" type="tokenType"/>
+          <xs:element name="activiteitNummer" minOccurs="0" maxOccurs="1" nillable="true" type="tokenType"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

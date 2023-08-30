@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema
+  attributeFormDefault="unqualified"
+  elementFormDefault="qualified"
+  targetNamespace="http://www.tweedekamer.nl/xsd/tkData/v1-0"
+  xmlns="http://www.tweedekamer.nl/xsd/tkData/v1-0"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:include schemaLocation="tkData-v1-0-base.xsd"/>
+
+  <xs:element name="resource" type="resourceType"/>
+
+  <xs:complexType name="resourceType" final="#all">
+    <xs:complexContent>
+      <xs:extension base="identificatieType">
+        <xs:sequence>
+          <xs:element name="bytes" minOccurs="0" maxOccurs="1" nillable="true" type="base64BinaryType"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>  
+</xs:schema>

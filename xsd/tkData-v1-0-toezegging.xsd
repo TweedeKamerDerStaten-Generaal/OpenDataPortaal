@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema
+  attributeFormDefault="unqualified"
+  elementFormDefault="qualified"
+  targetNamespace="http://www.tweedekamer.nl/xsd/tkData/v1-0"
+  xmlns="http://www.tweedekamer.nl/xsd/tkData/v1-0"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:include schemaLocation="tkData-v1-0-base.xsd"/>
+  <xs:include schemaLocation="tkData-v1-0-iso-8601.xsd"/>
+
+  <xs:element name="toezegging" type="toezeggingType"/>
+
+  <xs:simpleType name="toezeggingstatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Openstaand"/>
+      <xs:enumeration value="Voldaan"/>
+      <xs:enumeration value="Deels Voldaan"/>
+      <xs:enumeration value="Vervallen"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="toezeggingType" final="#all">
+    <xs:complexContent>
+      <xs:extension base="entiteitType">
+        <xs:sequence>
+          <!-- Relaties -->
+          <xs:element name="toegezegdAanFractie" minOccurs="0" maxOccurs="1" nillable="true" type="referentieLiteral"/>
+          <xs:element name="toegezegdAanPersoon" minOccurs="0" maxOccurs="1" nillable="true" type="referentieLiteral"/>
+          <xs:element name="isHerhalingVan" minOccurs="0" maxOccurs="unbounded" type="referentieBijgewerktLiteral"/>
+          <xs:element name="isAanvullingOp" minOccurs="0" maxOccurs="unbounded" type="referentieBijgewerktLiteral"/>
+          <xs:element name="isWijzigingVan" minOccurs="0" maxOccurs="unbounded" type="referentieBijgewerktLiteral"/>
+          <!-- Attributen -->
+          <xs:element name="aanmaakdatum" minOccurs="0" maxOccurs="1" nillable="true" type="dateTimeType"/>
+          <xs:element name="nummer" minOccurs="0" maxOccurs="1" nillable="true" type="tokenType"/>
+          <xs:element name="activiteit" minOccurs="0" maxOccurs="1" type="referentieLiteral"/>
+          <xs:element name="activiteitNummer" minOccurs="0" maxOccurs="1" nillable="true" type="stringType"/>
+          <xs:element name="naam" minOccurs="0" nillable="true" type="stringType" />
+          <xs:element name="achternaam" minOccurs="0" nillable="true" type="stringType" />
+          <xs:element name="initialen" minOccurs="0" nillable="true" type="stringType" />
+          <xs:element name="tussenvoegsel" minOccurs="0" nillable="true" type="stringType" />
+          <xs:element name="voornaam" minOccurs="0" nillable="true" type="stringType" />
+          <xs:element name="achtervoegsel" minOccurs="0" nillable="true" type="stringType" />
+          <xs:element name="titulatuur" minOccurs="0" nillable="true" type="stringType" />
+          <xs:element name="functie" minOccurs="0" nillable="true" type="stringType" />
+          <xs:element name="status" minOccurs="0" maxOccurs="1" nillable="true" type="toezeggingstatus"/>
+          <xs:element name="datumNakoming" minOccurs="0" maxOccurs="1" nillable="true" type="dateTimeType"/>
+          <xs:element name="kamerbriefNakoming" minOccurs="0" maxOccurs="1" nillable="true" type="stringType"/>
+          <xs:element name="ministerie" minOccurs="0" maxOccurs="1" nillable="true" type="stringType"/>
+          <xs:element name="tekst" minOccurs="0" maxOccurs="1" nillable="true" type="stringType"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

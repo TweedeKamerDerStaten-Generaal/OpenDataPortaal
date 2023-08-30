@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema
+  elementFormDefault="qualified"
+  attributeFormDefault="unqualified"
+  targetNamespace="http://www.tweedekamer.nl/xsd/tkData/v1-0"
+  xmlns="http://www.tweedekamer.nl/xsd/tkData/v1-0"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:include schemaLocation="tkData-v1-0-base.xsd"/>
+
+  <xs:element name="kamerstukdossier" type="kamerstukdossierType"/>
+
+  <xs:complexType name="kamerstukdossierType" final="#all">
+    <xs:complexContent>
+      <xs:extension base="entiteitType">
+        <xs:sequence>
+          <!-- Attributen -->
+          <xs:element name="titel" minOccurs="0" maxOccurs="1" nillable="true" type="stringType"/>
+          <xs:element name="citeertitel" minOccurs="0" maxOccurs="1" nillable="true" type="stringType"/>
+          <xs:element name="alias" minOccurs="0" maxOccurs="1" nillable="true" type="stringType"/>
+          <xs:element name="nummer" minOccurs="0" maxOccurs="1" type="xs:unsignedInt"/>
+          <xs:element name="toevoeging" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string"/>
+          <xs:element name="hoogsteVolgnummer" minOccurs="0" maxOccurs="1" type="xs:int"/>
+          <xs:element name="afgesloten" minOccurs="0" maxOccurs="1" nillable="true" type="booleanType"/>
+          <xs:element name="kamer" minOccurs="0" maxOccurs="1" nillable="true" type="stringType"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

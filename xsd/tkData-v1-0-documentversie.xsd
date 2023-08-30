@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema
+  elementFormDefault="qualified"
+  attributeFormDefault="unqualified"
+  targetNamespace="http://www.tweedekamer.nl/xsd/tkData/v1-0"
+  xmlns="http://www.tweedekamer.nl/xsd/tkData/v1-0"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:include schemaLocation="tkData-v1-0-base.xsd"/>
+  
+  <xs:element name="documentVersie" type="documentVersieType"/>
+
+  <xs:complexType name="documentVersieType" final="#all">
+    <xs:complexContent>
+      <xs:extension base="entiteitType">
+        <xs:sequence>
+          <!-- Relaties -->
+          <xs:element name="document" minOccurs="0" maxOccurs="1" type="referentieLiteral"/>
+          <!-- Attributen -->
+          <xs:element name="status" minOccurs="0" maxOccurs="1" nillable="true" type="tokenType"/>
+          <xs:element name="versienummer" minOccurs="0" maxOccurs="1" nillable="true" type="unsignedIntType"/>
+          <xs:element name="bestandsgrootte" minOccurs="0" maxOccurs="1" nillable="true" type="unsignedIntType"/>
+          <xs:element name="extensie" minOccurs="0" maxOccurs="1" nillable="true" type="tokenType"/>
+          <xs:element name="datum" minOccurs="0" maxOccurs="1" nillable="true" type="dateTimeType"/>
+          <xs:element name="externeidentifier" minOccurs="0" maxOccurs="1" nillable="true" type="tokenType"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>
