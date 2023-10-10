@@ -19,3 +19,5 @@ Voor veelgestelde vragen:
 Voor de gebruiksvoorwaarden:
 
 - [opendata.tweedekamer.nl/disclaimer](https://opendata.tweedekamer.nl/disclaimer)
+
+Ons streven is om binnen vijf werkdagen te reageren op _issues_, de politieke actualiteit kan er echter voor zorgen dat dit langer duurt.
