@@ -1,0 +1,723 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="http://www.tweedekamer.nl/vlos2" elementFormDefault="qualified" xmlns="http://www.tweedekamer.nl/vlos2" xmlns:vlos2="http://www.tweedekamer.nl/vlos2" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.3">
+  <xs:element name="vlosdocument" type="vlos2:vlosdocument"/>
+  <!--vlosdocumentsoort-->
+  <xs:simpleType name="vlosdocumentsoort">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Voorpublicatie" />
+      <xs:enumeration value="Eindpublicatie" />
+      <xs:enumeration value="Tussenpublicatie" />
+      <xs:enumeration value="Overig" />
+    </xs:restriction>
+  </xs:simpleType>
+  <!--vlosdocumentstatus-->
+  <xs:simpleType name="vlosdocumentstatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Casco" />
+      <xs:enumeration value="Concept" />
+      <xs:enumeration value="Ongecorrigeerd" />
+      <xs:enumeration value="Gecorrigeerd" />
+      <xs:enumeration value="Gerectificeerd" />
+      <xs:enumeration value="Overig" />
+    </xs:restriction>
+  </xs:simpleType>
+  <!--kamer-->
+  <xs:simpleType name="kamer">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Tweede Kamer" />
+      <xs:enumeration value="Eerste Kamer" />
+      <xs:enumeration value="Verenigde Vergadering" />
+      <xs:enumeration value="Overig" />
+    </xs:restriction>
+  </xs:simpleType>
+  <!--vergaderingsoort-->
+  <xs:simpleType name="vergaderingsoort">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Commissie" />
+      <xs:enumeration value="Plenair" />
+      <xs:enumeration value="Overig" />
+    </xs:restriction>
+  </xs:simpleType>
+  <!--activiteitsoort-->
+  <xs:simpleType name="activiteitsoort">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Opening" />
+      <xs:enumeration value="Plenair debat" />
+      <xs:enumeration value="Interpellatiedebat" />
+      <xs:enumeration value="Stemmingen" />
+      <xs:enumeration value="Regeling van werkzaamheden" />
+      <xs:enumeration value="Vragenuur" />
+      <xs:enumeration value="Hamerstukken" />
+      <xs:enumeration value="Beëdiging" />
+      <xs:enumeration value="Herdenking" />
+      <xs:enumeration value="Verklaring" />
+      <xs:enumeration value="Afscheid" />
+      <xs:enumeration value="Aanbieding" />
+      <xs:enumeration value="Overig" />
+      <xs:enumeration value="Sluiting" />
+      <xs:enumeration value="Mededelingen" />
+      <xs:enumeration value="Commissiedebat" />
+      <xs:enumeration value="Wetgevingsoverleg" />
+      <xs:enumeration value="Begrotingsoverleg" />
+      <xs:enumeration value="Notaoverleg" />
+      <xs:enumeration value="Hoorzitting" />
+      <xs:enumeration value="Rondetafelgesprek" />
+      <xs:enumeration value="Verhoor" />
+      <xs:enumeration value="Technische briefing" />
+      <xs:enumeration value="Gesprek" />
+      <xs:enumeration value="Procedurevergadering" />
+      <xs:enumeration value="Constituerende vergadering" />
+      <xs:enumeration value="Presentatie" />
+      <xs:enumeration value="Persconferentie" />
+      <xs:enumeration value="Algemeen overleg" />
+      <!--wordt niet meer gebruikt, slechts voor archiefdoeleinden-->
+      <xs:enumeration value="Openbaar verhoor" />
+      <!--wordt niet meer gebruikt, slechts voor archiefdoeleinden-->
+    </xs:restriction>
+  </xs:simpleType>
+  <!--activiteithoofdsoort-->
+  <xs:simpleType name="activiteithoofdsoort">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Algemeen" />
+      <xs:enumeration value="Stemming" />
+      <xs:enumeration value="Vraag" />
+      <xs:enumeration value="Termijn" />
+    </xs:restriction>
+  </xs:simpleType>
+  <!--activiteitdeelsoort-->
+  <xs:simpleType name="activiteitdeelsoort">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Spreekbeurt" />
+      <xs:enumeration value="Stemming item" />
+      <xs:enumeration value="Overig" />
+    </xs:restriction>
+  </xs:simpleType>
+  <!--activiteititemsoort-->
+  <xs:simpleType name="activiteititemsoort">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Woordvoerder" />
+      <xs:enumeration value="Besluit" />
+      <xs:enumeration value="Overig" />
+    </xs:restriction>
+  </xs:simpleType>
+  <!--zaaksoort-->
+  <xs:simpleType name="zaaksoort">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Amendement" />
+      <xs:enumeration value="Subamendement" />
+      <xs:enumeration value="Begroting" />
+      <xs:enumeration value="Brief commissie" />
+      <xs:enumeration value="Brief derden" />
+      <xs:enumeration value="Brief Kamer" />
+      <xs:enumeration value="Brief regering" />
+      <xs:enumeration value="Brief van lid/fractie/commissie" />
+      <xs:enumeration value="EU-voorstel" />
+      <xs:enumeration value="Initiatiefnota" />
+      <xs:enumeration value="Initiatiefwetgeving" />
+      <xs:enumeration value="Interpellatie" />
+      <xs:enumeration value="Mondelinge vragen" />
+      <xs:enumeration value="Motie" />
+      <xs:enumeration value="Nationale ombudsman" />
+      <xs:enumeration value="Nota naar aanleiding van het (nader) verslag" />
+      <xs:enumeration value="Nota van wijziging" />
+      <xs:enumeration value="Overig" />
+      <xs:enumeration value="Parlementair onderzoeksrapport" />
+      <xs:enumeration value="PKB/Structuurvisie" />
+      <xs:enumeration value="Rapport/brief Algemene Rekenkamer" />
+      <xs:enumeration value="Rondvraagpunt procedurevergadering" />
+      <xs:enumeration value="Schriftelijke vragen" />
+      <xs:enumeration value="Stafnotitie" />
+      <xs:enumeration value="Stemmingitem" />
+      <xs:enumeration value="Verdrag" />
+      <xs:enumeration value="Verzoek bij regeling van werkzaamheden" />
+      <xs:enumeration value="Verzoekschrift" />
+      <xs:enumeration value="Voordrachten en benoemingen" />
+      <xs:enumeration value="Wijziging RvO" />
+      <xs:enumeration value="Wetgeving" />
+      <xs:enumeration value="Wijzigingen voorgesteld door de regering" />
+    </xs:restriction>
+  </xs:simpleType>
+  <!--draadboekfragmentsoort-->
+  <xs:simpleType name="draadboekfragmentsoort">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Wisseling voorzitter" />
+      <xs:enumeration value="Nonverbale uitingsvormen" />
+      <xs:enumeration value="Bericht verhindering" />
+      <xs:enumeration value="Ingekomen stukken" />
+      <xs:enumeration value="Mededeling algemeen" />
+      <xs:enumeration value="Beraadslaging algemeen" />
+      <xs:enumeration value="Tekst" />
+      <xs:enumeration value="Stemverklaring" />
+      <xs:enumeration value="Amendement intrekking overname" />
+      <xs:enumeration value="Motie aanhouden" />
+      <xs:enumeration value="Motie wijzigen" />
+      <xs:enumeration value="Motie intrekking" />
+      <xs:enumeration value="Motie indiening" />
+      <xs:enumeration value="Motie wijzigen stemmingen" />
+      <xs:enumeration value="Schriftelijk antwoorden" />
+      <xs:enumeration value="Terinzagelegging CIP" />
+      <xs:enumeration value="Voorzitter selectie" />
+      <xs:enumeration value="Schorsing" />
+      <xs:enumeration value="Zie vergadering van" />
+      <xs:enumeration value="Bericht verhindering leden en reden" />
+      <xs:enumeration value="Overig" />
+      <xs:enumeration value="Blok" />
+      <xs:enumeration value="Aantekening" />
+      <xs:enumeration value="Zonder stemming aangenomen" />
+    </xs:restriction>
+  </xs:simpleType>
+  <!--sprekersoort-->
+  <xs:simpleType name="sprekersoort">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Onbekend" />
+      <xs:enumeration value="Tweede Kamerlid" />
+      <xs:enumeration value="Externe spreker" />
+      <xs:enumeration value="Minister" />
+      <xs:enumeration value="Staatssecretaris" />
+      <xs:enumeration value="Eerste Kamerlid" />
+    </xs:restriction>
+  </xs:simpleType>
+  <!--commissietype-->
+  <xs:simpleType name="commissietype">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Voortouwcommissie" />
+      <xs:enumeration value="Volgcommissie" />
+    </xs:restriction>
+  </xs:simpleType>
+  <!--commissiesoort-->
+  <xs:simpleType name="commissiesoort">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Overig" />
+      <xs:enumeration value="Algemene commissie(s)" />
+      <xs:enumeration value="Delegaties (internationaal)" />
+      <xs:enumeration value="Enquêtecommissie(s)" />
+      <xs:enumeration value="Overige commissies" />
+      <xs:enumeration value="Themacommissie(s)" />
+      <xs:enumeration value="Tijdelijke commissie(s)" />
+      <xs:enumeration value="Vaste commissies" />
+      <xs:enumeration value="Vervallen commissies" />
+    </xs:restriction>
+  </xs:simpleType>
+  <!--besluitvormsoort-->
+  <xs:simpleType name="besluitvormsoort">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Onbekend" />
+      <xs:enumeration value="Hoofd" />
+      <xs:enumeration value="Fractie" />
+      <xs:enumeration value="Gedeeld" />
+      <xs:enumeration value="Overig" />
+    </xs:restriction>
+  </xs:simpleType>
+  <!--bijlagesoort-->
+  <xs:simpleType name="bijlagesoort">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Lijst van ingekomen stukken" />
+      <xs:enumeration value="Overig" />
+    </xs:restriction>
+  </xs:simpleType>
+  <!--uitslag-->
+  <xs:simpleType name="uitslag">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Onbekend" />
+      <xs:enumeration value="Aangenomen" />
+      <xs:enumeration value="Verworpen" />
+      <xs:enumeration value="Staken" />
+      <xs:enumeration value="Overig" />
+    </xs:restriction>
+  </xs:simpleType>
+  <!--nadruktype-->
+  <xs:simpleType name="nadruktype">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Vet" />
+      <xs:enumeration value="Schuin" />
+      <xs:enumeration value="Bovenschrift" />
+      <xs:enumeration value="Onderschrift" />
+    </xs:restriction>
+  </xs:simpleType>
+  <!--alineagroeptype-->
+  <xs:simpleType name="alineagroeptype">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Motietekst" />
+      <xs:enumeration value="Motieinfo" />
+      <xs:enumeration value="Overig" />
+    </xs:restriction>
+  </xs:simpleType>
+  <!--vlostekst-->
+  <xs:complexType name="vlostekst">
+    <xs:sequence>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="alinea" type="alinea" />
+        <xs:element name="alineagroep" type="alineagroep" />
+      </xs:choice>
+    </xs:sequence>
+  </xs:complexType>
+  <!--alinea-->
+  <xs:complexType name="alinea">
+    <xs:sequence>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="alineaitem" type="alineaitem" />
+        <xs:element name="lijst" type="lijst" />
+      </xs:choice>
+    </xs:sequence>
+  </xs:complexType>
+  <!--alineagroep-->
+  <xs:complexType name="alineagroep">
+    <xs:sequence minOccurs="1" maxOccurs="unbounded">
+      <xs:element name="alinea" type="alinea" />
+    </xs:sequence>
+    <xs:attribute name="type" type="alineagroeptype" use="required" />
+  </xs:complexType>
+  <!--alineaitem-->
+  <xs:complexType name="alineaitem" mixed="true">
+    <xs:sequence>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dossiernummer" />
+        <xs:element name="stuknummer" />
+        <xs:element name="nadruk" type="nadruk" />
+      </xs:choice>
+    </xs:sequence>
+  </xs:complexType>
+  <!--lijst-->
+  <xs:complexType name="lijst">
+    <xs:sequence minOccurs="1" maxOccurs="unbounded">
+      <xs:element name="alineaitem" type="alineaitem" />
+    </xs:sequence>
+  </xs:complexType>
+  <!--nadruk-->
+  <xs:complexType name="nadruk" mixed="true">
+    <xs:sequence>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dossiernummer" />
+        <xs:element name="stuknummer" />
+        <xs:element name="nadruk" />
+      </xs:choice>
+    </xs:sequence>
+    <xs:attribute name="type" type="nadruktype" use="required" />
+  </xs:complexType>
+  <!--schorsingtype-->
+  <xs:simpleType name="schorsingtype">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Lang" />
+      <xs:enumeration value="Kort" />
+    </xs:restriction>
+  </xs:simpleType>
+  <!--vlosdocument-->
+  <xs:complexType name="vlosdocument">
+    <xs:sequence>
+      <xs:element name="rectificatieomschrijving" type="xs:string" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            Geeft uitleg aan de rectificatie.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="omschrijving" type="xs:string" minOccurs="0" />
+      <xs:element name="vergadering" type="vlos2:vergadering" />
+    </xs:sequence>
+    <xs:attribute name="soort" type="vlos2:vlosdocumentsoort" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          soort publicatie. bv: tussenpublicatie of eindpublicatie
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="objectid" type="xs:string" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          unieke GUID
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="datum" type="xs:dateTime" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          publicatie datum in UTC. Vb: 2012-05-01T12:55:17Z
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="source" type="xs:string" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          bron system = “VLOS2”
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="status" type="vlosdocumentstatus" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          status b.v: Ongecorrigeerd of Gecorrigeerd
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="technischeaanpassing" type="xs:boolean">
+      <xs:annotation>
+        <xs:documentation>
+          Geeft aan of het document technisch is aanpast, ofwel geen tekstuele wijzigingen.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+
+    <xs:attribute name="versie" type="xs:string" />
+  </xs:complexType>
+  <!--vergadering-->
+  <xs:complexType name="vergadering">
+    <xs:sequence>
+      <xs:element name="titel" type="xs:string" />
+      <xs:element name="zaal" type="xs:string" />
+      <xs:element name="vergaderjaar" type="xs:string" />
+      <xs:element name="vergaderingnummer" type="xs:string" />
+      <xs:element name="datum" type="xs:dateTime" />
+      <xs:element name="aanvangstijd" type="xs:dateTime" />
+      <xs:element name="sluiting" type="xs:dateTime" />
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="activiteit" type="vlos2:activiteit">
+          <xs:annotation>
+            <xs:documentation>
+              bijvoorbeeld: plenair debat, stemmingen, vragenuur, etc.
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="draadboekfragment" type="vlos2:draadboekfragment" />
+      </xs:choice>
+      <xs:element name="bijlages" type="vlos2:bijlages" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            bijvoorbeeld: Lijst van ingekomen stukken
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="commissies" type="vlos2:commissies" minOccurs="0" maxOccurs="1" />
+      <xs:element name="fracties" type="vlos2:fracties" minOccurs="0" maxOccurs="1" />
+      <xs:element name="zaken" type="vlos2:zaken" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            bijvoorbeeld wetgeving, motie, etc. zie zaaksoort.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="sprekers" type="vlos2:sprekers" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+    <xs:attribute name="soort" type="vlos2:vergaderingsoort" use="required" />
+    <xs:attribute name="objectid" type="xs:string" use="required" />
+    <xs:attribute name="kamer" type="vlos2:kamer" use="required" />
+  </xs:complexType>
+  <!--activiteitenindex-->
+  <xs:complexType name="activiteitenindex">
+    <xs:sequence minOccurs="1" maxOccurs="unbounded">
+      <xs:element name="category" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <!--activiteit-->
+  <xs:complexType name="activiteit">
+    <xs:sequence>
+      <xs:element name="titel" type="xs:string" />
+      <xs:element name="onderwerp" type="xs:string" />
+      <xs:element name="parlisid" type="xs:string" />
+      <xs:element name="aanvangstijd" type="xs:dateTime" />
+      <xs:element name="eindtijd" type="xs:dateTime" />
+      <xs:element name="voortzetting" type="xs:boolean" />
+      <xs:element name="tekst" type="vlos2:vlostekst" minOccurs="0" />
+      <xs:element name="zaken" type="vlos2:zaken" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            bijvoorbeeld wetgeving, motie, etc. zie zaaksoort.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="relaties" type="vlos2:relaties" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            Dit is bedoeld voor toekomstige koppelingen. Bijvoorbeeld tussen plenair en commissie activiteiten.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="activiteitenindex" type="activiteitenindex" minOccurs="0" />
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="draadboekfragment" type="vlos2:draadboekfragment" />
+        <xs:element name="activiteithoofd" type="vlos2:activiteithoofd" minOccurs="1">
+          <xs:annotation>
+            <xs:documentation>
+              <![CDATA[
+                  Activiteithoofd is een generieke container en zorgt voor de onderverdeling van een activiteit. 
+                  Stemmingen, Vragenuur en Plenair debat activiteiten kunnen meerdere activiteithoofden bevatten. 
+                  De rest van de activiteiten bevatten maar een activiteithoofd van het type Algemeen.
+
+                  Activiteithoofdsoort=Stemming
+                  Bij stemmingen activiteit geldt: activiteithoofd(en) is/zijn gelijk aan stemming-onderwerp(en)
+                  Voorbeeld: Aan de orde zijn de stemmingen in verband met het wetsvoorstel ...
+                              Aan de orde zijn de stemmingen over moties ingediend bij het debat over dierproeven ... 
+                              etc.
+
+                  Activiteithoofdsoort=Vraag
+                  Bij vragenuur geldt: activiteithoofd(en) is/zijn gelijk aan afzonderlijke vragen van Kamerleden.
+                  Voorbeeld:  Vragen van het lid Slob aan de minister-president over ... 
+                              Vragen van het lid Schouw aan de minister-president over ...
+                              etc.
+
+                  Activiteithoofdsoort= Termijn
+                  Bij plenaire debat/Interpellatiedebat geldt: activiteithoofd(en) is/zijn gelijk aan termijn(en).
+                  Voorbeeld:  Termij inbreng 
+                              Termijn antwoord 
+                              etc.
+
+                  Activiteithoofdsoort= Algemeen
+                  Activiteithoofd van het type "Algemeen" (vlos2:activiteitsoort = Algemeen) is niet herhaalbaar en 
+                  komt maar een keer voor. 
+                  
+                  Zie ook activiteithoofdsoort.
+                  ]]>
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+      </xs:choice>
+    </xs:sequence>
+    <xs:attribute name="soort" type="vlos2:activiteitsoort" use="required" />
+    <xs:attribute name="objectid" type="xs:string" use="required" />
+    <xs:attribute name="isgerectificeerd" type="xs:boolean">
+      <xs:annotation>
+        <xs:documentation>
+          Geeft aan of de activiteit is gerectificeerd
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+  <!--activiteithoofd-->
+  <xs:complexType name="activiteithoofd">
+    <xs:sequence>
+      <xs:element name="titel" type="xs:string" />
+      <xs:element name="onderwerp" type="xs:string" />
+      <xs:element name="markeertijdbegin" type="xs:dateTime" />
+      <xs:element name="markeertijdeind" type="xs:dateTime" />
+      <xs:element name="tekst" type="vlos2:vlostekst" minOccurs="0" />
+      <xs:element name="zaken" type="vlos2:zaken" minOccurs="0" maxOccurs="1" />
+      <xs:element name="sprekers" type="vlos2:sprekers" minOccurs="0" maxOccurs="1" />
+      <xs:element name="activiteitenindex" type="activiteitenindex" minOccurs="0" />
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="draadboekfragment" type="vlos2:draadboekfragment" />
+        <xs:element name="activiteitdeel" type="vlos2:activiteitdeel" />
+      </xs:choice>
+    </xs:sequence>
+    <xs:attribute name="soort" type="vlos2:activiteithoofdsoort" use="required" />
+    <xs:attribute name="objectid" type="xs:string" use="required" />
+    <xs:attribute name="isgerectificeerd" type="xs:boolean">
+      <xs:annotation>
+        <xs:documentation>
+          Geeft aan of het activiteithoofd is gerectificeerd
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+  <!--activiteitdeel-->
+  <xs:complexType name="activiteitdeel">
+    <xs:sequence>
+      <xs:element name="spreker" type="vlos2:spreker" minOccurs="0" />
+      <xs:element name="titel" type="xs:string" />
+      <xs:element name="isnieuw" type="xs:boolean" minOccurs="0" />
+      <xs:element name="markeertijdbegin" type="xs:dateTime" />
+      <xs:element name="markeertijdeind" type="xs:dateTime" />
+      <xs:element name="tekst" type="vlos2:vlostekst" minOccurs="0" />
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="draadboekfragment" type="vlos2:draadboekfragment" />
+        <xs:element name="activiteititem" type="vlos2:activiteititem" />
+      </xs:choice>
+    </xs:sequence>
+    <xs:attribute name="soort" type="vlos2:activiteitdeelsoort" use="required" />
+    <xs:attribute name="objectid" type="xs:string" use="required" />
+  </xs:complexType>
+  <!--activiteititem-->
+  <xs:complexType name="activiteititem">
+    <xs:sequence>
+      <xs:element name="titel" type="xs:string" />
+      <xs:element name="markeertijdbegin" type="xs:dateTime" />
+      <xs:element name="markeertijdeind" type="xs:dateTime" />
+      <xs:element name="tekst" type="vlos2:vlostekst" minOccurs="0" />
+      <xs:element name="besluitvorm" type="vlos2:besluitvormsoort" minOccurs="0" />
+      <xs:element name="uitslag" type="vlos2:uitslag" minOccurs="0" />
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="draadboekfragment" type="vlos2:draadboekfragment" />
+        <xs:element name="woordvoerder" type="vlos2:woordvoerder" />
+        <xs:element name="stemmingen" type="vlos2:stemmingen" />
+      </xs:choice>
+    </xs:sequence>
+    <xs:attribute name="soort" type="vlos2:activiteititemsoort" use="required" />
+    <xs:attribute name="objectid" type="xs:string" use="required" />
+  </xs:complexType>
+  <!--woordvoerder-->
+  <xs:complexType name="woordvoerder">
+    <xs:sequence>
+      <xs:element name="spreker" type="vlos2:spreker" />
+      <xs:element name="markeertijdbegin" type="xs:dateTime" />
+      <xs:element name="markeertijdeind" type="xs:dateTime" />
+      <xs:element name="isvoorzitter" type="xs:boolean" />
+      <xs:element name="isdraad" type="xs:boolean" />
+      <xs:element name="tekst" type="vlos2:vlostekst" />
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="draadboekfragment" type="vlos2:draadboekfragment" />
+        <xs:element name="interrumpant" type="vlos2:interrumpant" />
+      </xs:choice>
+    </xs:sequence>
+    <xs:attribute name="objectid" type="xs:string" use="required" />
+  </xs:complexType>
+  <!--interrumpant-->
+  <xs:complexType name="interrumpant">
+    <xs:sequence>
+      <xs:element name="spreker" type="vlos2:spreker" />
+      <xs:element name="markeertijdbegin" type="xs:dateTime" />
+      <xs:element name="markeertijdeind" type="xs:dateTime" />
+      <xs:element name="isvoorzitter" type="xs:boolean" />
+      <xs:element name="isdraad" type="xs:boolean" />
+      <xs:element name="tekst" type="vlos2:vlostekst" />
+      <xs:element name="draadboekfragment" type="vlos2:draadboekfragment" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+    <xs:attribute name="objectid" type="xs:string" use="required" />
+  </xs:complexType>
+  <!--sprekers-->
+  <xs:complexType name="sprekers">
+    <xs:sequence minOccurs="1" maxOccurs="unbounded">
+      <xs:element name="spreker" type="vlos2:spreker" />
+    </xs:sequence>
+  </xs:complexType>
+  <!--spreker-->
+  <xs:complexType name="spreker">
+    <xs:sequence>
+      <xs:element name="fractie" type="vlos2:fractie" minOccurs="0" />
+      <xs:element name="aanhef" type="xs:string" />
+      <xs:element name="verslagnaam" type="xs:string" />
+      <xs:element name="weergavenaam" type="xs:string" />
+      <xs:element name="voornaam" type="xs:string" />
+      <xs:element name="achternaam" type="xs:string" />
+      <xs:element name="functie" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute name="soort" type="vlos2:sprekersoort" use="required" />
+    <xs:attribute name="objectid" type="xs:string" use="required" />
+  </xs:complexType>
+  <!--fracties-->
+  <xs:complexType name="fracties">
+    <xs:sequence minOccurs="1" maxOccurs="unbounded">
+      <xs:element name="fractie" type="vlos2:fractie" />
+    </xs:sequence>
+  </xs:complexType>
+  <!--fractie-->
+  <xs:complexType name="fractie">
+    <xs:sequence>
+      <xs:element name="naam" type="xs:string" />
+      <xs:element name="afkorting" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute name="objectid" type="xs:string" use="required" />
+  </xs:complexType>
+  <!--commissies-->
+  <xs:complexType name="commissies">
+    <xs:sequence minOccurs="1" maxOccurs="unbounded">
+      <xs:element name="commissie" type="vlos2:commissie" />
+    </xs:sequence>
+  </xs:complexType>
+  <!--commissie-->
+  <xs:complexType name="commissie">
+    <xs:sequence>
+      <xs:element name="afkorting" type="xs:string" />
+      <xs:element name="verslagnaam" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute name="volgorde" type="xs:string" use="optional" />
+    <xs:attribute name="soort" type="vlos2:commissiesoort" use="required" />
+    <xs:attribute name="type" type="vlos2:commissietype" use="required" />
+    <xs:attribute name="objectid" type="xs:string" use="required" />
+  </xs:complexType>
+  <!--draadboekfragment-->
+  <xs:complexType name="draadboekfragment">
+    <xs:annotation>
+      <xs:documentation>
+        De standaardformulering in de vorm van een standaard tekstfragment van een gebeurtenis, zoals die tijdens de vergaderingen van de Tweede Kamer kan plaatsvinden. zie ook draadboekfragmentsoort.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="markeertijdbegin" type="xs:dateTime" />
+      <xs:element name="markeertijdeind" type="xs:dateTime" />
+      <xs:element name="isdraad" type="xs:boolean" />
+      <xs:element name="tekst" type="vlos2:vlostekst" minOccurs="0" />
+      <xs:element name="zaken" type="vlos2:zaken" minOccurs="0" />
+      <xs:element name="sprekers" type="vlos2:sprekers" minOccurs="0" />
+      <xs:element name="fracties" type="vlos2:fracties" minOccurs="0" />
+    </xs:sequence>
+    <xs:attribute name="soort" type="vlos2:draadboekfragmentsoort" use="required" />
+    <xs:attribute name="objectid" type="xs:string" use="required" />
+    <xs:attribute name="iseindeactiviteit" type="xs:boolean" use="optional" />
+    <xs:attribute name="schorsingtype" type="vlos2:schorsingtype" use="optional" />
+  </xs:complexType>
+  <!--stemmingen-->
+  <xs:complexType name="stemmingen">
+    <xs:sequence minOccurs="1" maxOccurs="unbounded">
+      <xs:element name="stemming" type="vlos2:stemming" />
+    </xs:sequence>
+  </xs:complexType>
+  <!--stemming-->
+  <xs:complexType name="stemming">
+    <xs:sequence>
+      <xs:element name="fractie" type="vlos2:fractie" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="hoofd" type="vlos2:spreker" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="stem" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <!--zaken-->
+  <xs:complexType name="zaken">
+    <xs:sequence minOccurs="1" maxOccurs="unbounded">
+      <xs:element name="zaak" type="vlos2:zaak" />
+    </xs:sequence>
+  </xs:complexType>
+  <!--zaak-->
+  <xs:complexType name="zaak">
+    <xs:sequence>
+      <xs:element name="titel" type="xs:string" />
+      <xs:element name="onderwerp" type="xs:string" />
+      <xs:element name="dossiernummer" type="xs:string" />
+      <xs:element name="stuknummer" type="xs:string" />
+      <xs:element name="sequeel" type="xs:string" />
+      <xs:element name="parlisid" type="xs:string" />
+      <xs:element name="tekst" type="vlos2:vlostekst" minOccurs="0" />
+      <xs:element name="isgewijzigd" type="xs:boolean" minOccurs="0" />
+      <xs:element name="isnadergewijzigd" type="xs:boolean" minOccurs="0" />
+      <xs:element name="isvoldoendeondersteund" type="xs:boolean" minOccurs="0" />
+      <xs:element name="sprekers" type="vlos2:sprekers" minOccurs="0" />
+    </xs:sequence>
+    <xs:attribute name="volgorde" type="xs:string" use="optional" />
+    <xs:attribute name="soort" type="vlos2:zaaksoort" use="required" />
+    <xs:attribute name="objectid" type="xs:string" use="required" />
+  </xs:complexType>
+  <!--relaties-->
+  <xs:complexType name="relaties">
+    <xs:sequence minOccurs="1" maxOccurs="unbounded">
+      <xs:element name="relatie" type="vlos2:relatie" />
+    </xs:sequence>
+  </xs:complexType>
+  <!--relatie-->
+  <xs:complexType name="relatie">
+    <xs:sequence>
+      <xs:element name="bronid" type="xs:string" minOccurs="0" />
+      <xs:element name="titel" type="xs:string" minOccurs="0" />
+      <xs:element name="onderwerp" type="xs:string" minOccurs="0" />
+      <xs:element name="info" type="xs:string" minOccurs="0" />
+      <xs:element name="omschrijving" type="xs:string" minOccurs="0" />
+      <xs:element name="dossiernummer" type="xs:string" minOccurs="0" />
+      <xs:element name="stuknummer" type="xs:string" minOccurs="0" />
+      <xs:element name="sequeel" type="xs:string" minOccurs="0" />
+    </xs:sequence>
+    <xs:attribute name="soort" type="xs:string" use="optional" />
+    <xs:attribute name="objectid" type="xs:string" use="required" />
+  </xs:complexType>
+  <!--bijlages-->
+  <xs:complexType name="bijlages">
+    <xs:sequence minOccurs="1" maxOccurs="unbounded">
+      <xs:element name="bijlage" type="vlos2:bijlage" />
+    </xs:sequence>
+  </xs:complexType>
+  <!--bijlage-->
+  <xs:complexType name="bijlage">
+    <xs:sequence>
+      <xs:element name="titel" type="xs:string" />
+      <xs:element name="onderwerp" type="xs:string" minOccurs="0" />
+      <xs:element name="omschrijving" type="xs:string" minOccurs="0" />
+      <xs:element name="tekst" type="vlos2:vlostekst" />
+    </xs:sequence>
+    <xs:attribute name="soort" type="vlos2:bijlagesoort" use="required" />
+    <xs:attribute name="objectid" type="xs:string" use="required" />
+  </xs:complexType>
+</xs:schema>
