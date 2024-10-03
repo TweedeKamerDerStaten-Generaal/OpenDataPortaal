@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <xs:schema
   attributeFormDefault="unqualified"
   elementFormDefault="qualified"
@@ -21,7 +21,7 @@
       <xs:documentation>Het element waarop dit attribuut betrekking heeft is voor het laatst bijgewerkt op het aangegeven tijdstip (aangegeven in UTC-formaat).</xs:documentation>
     </xs:annotation>
   </xs:attribute>
-  
+
   <!-- Resource attributen (downloadbare entiteit) -->
   <xs:attribute name="contentType" type="xs:string">
     <xs:annotation>
@@ -34,7 +34,7 @@
       <xs:documentation>Wanneer dit veld een waarde heeft, dan betekent het dat het element waarop dit attribuut betrekking heeft downloadbaar is.</xs:documentation>
     </xs:annotation>
   </xs:attribute>
-  
+
   <!-- Simple Types -->
   <xs:simpleType name="guidType">
     <xs:restriction base="xs:string">
@@ -47,7 +47,7 @@
   </xs:simpleType>
 
   <xs:simpleType name="idType">
-    <xs:restriction base="aanduidingType"/>    
+    <xs:restriction base="aanduidingType"/>
   </xs:simpleType>
 
   <xs:simpleType name="refType">
@@ -57,6 +57,11 @@
   <!-- Attribute Groups -->
   <xs:attributeGroup name="referenceAttributesGroup">
     <xs:attribute name="ref" use="optional" type="refType" />
+  </xs:attributeGroup>
+
+  <xs:attributeGroup name="referenceBijgewerktAttributesGroup">
+    <xs:attribute name="ref" use="optional" type="refType" />
+    <xs:attribute ref="bijgewerkt" use="required"/>
   </xs:attributeGroup>
 
   <!-- Complex Types -->
@@ -72,6 +77,13 @@
       <xs:element name="annotatie" minOccurs="0" maxOccurs="unbounded"/>
     </xs:sequence>
     <xs:attributeGroup ref="referenceAttributesGroup"/>
+  </xs:complexType>
+
+  <xs:complexType name="referentieBijgewerktLiteral">
+    <xs:sequence>
+      <xs:element name="annotatie" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attributeGroup ref="referenceBijgewerktAttributesGroup"/>
   </xs:complexType>
 
   <xs:complexType name="referentieType">
@@ -102,7 +114,7 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <!-- definities voor velden met simple types -->
   <xs:simpleType name="token">
     <xs:restriction base="xs:token">
