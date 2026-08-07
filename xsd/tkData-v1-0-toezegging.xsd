@@ -17,6 +17,8 @@
       <xs:enumeration value="Voldaan"/>
       <xs:enumeration value="Deels Voldaan"/>
       <xs:enumeration value="Vervallen"/>
+      <xs:enumeration value="Afgedaan"/>
+      <xs:enumeration value="Deels Afgedaan"/>
     </xs:restriction>
   </xs:simpleType>
 
