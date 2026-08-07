@@ -27,8 +27,14 @@
       <xs:extension base="entiteitType">
         <xs:sequence>
           <!-- Relaties -->
-          <xs:element name="toegezegdAanFractie" minOccurs="0" maxOccurs="1" nillable="true" type="referentieLiteral"/>
-          <xs:element name="toegezegdAanPersoon" minOccurs="0" maxOccurs="1" nillable="true" type="referentieLiteral"/>
+          <xs:element name="toegezegdAan" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="persoon" minOccurs="0" maxOccurs="1" nillable="true" type="referentieLiteral"/>
+                <xs:element name="fractie" minOccurs="0" maxOccurs="1" nillable="true" type="referentieLiteral"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
           <xs:element name="isHerhalingVan" minOccurs="0" maxOccurs="unbounded" type="referentieBijgewerktLiteral"/>
           <xs:element name="isAanvullingOp" minOccurs="0" maxOccurs="unbounded" type="referentieBijgewerktLiteral"/>
           <xs:element name="isWijzigingVan" minOccurs="0" maxOccurs="unbounded" type="referentieBijgewerktLiteral"/>
