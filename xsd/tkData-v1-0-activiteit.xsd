@@ -15,10 +15,6 @@
     <xs:complexContent>
       <xs:extension base="entiteitType">
         <xs:sequence>
-          <!-- Relaties -->
-          <xs:element name="voortouwcommissie" minOccurs="0" maxOccurs="1" type="referentieLiteral"/>
-          <xs:element name="voortgezetVanuit" minOccurs="0" maxOccurs="unbounded" type="referentieLiteral"/>
-          <xs:element name="vervangenVanuit" minOccurs="0" maxOccurs="unbounded" type="referentieLiteral"/>
           <!-- Attributen -->
           <xs:element name="soort" minOccurs="0" maxOccurs="1" nillable="true" type="tokenType"/>
           <xs:element name="nummer" minOccurs="0" maxOccurs="1" nillable="true" type="stringType"/>
@@ -46,12 +42,18 @@
           <xs:element name="voortouwnaam" minOccurs="0" maxOccurs="1" nillable="true" type="tokenType"/>
           <xs:element name="voortouwafkorting" minOccurs="0" maxOccurs="1" nillable="true" type="tokenType"/>
           <xs:element name="voortouwkortenaam" minOccurs="0" maxOccurs="1" nillable="true" type="tokenType"/>
+          <!-- Relaties -->
+          <xs:element name="voortouwcommissie" minOccurs="0" maxOccurs="1" type="referentieLiteral"/>
+          <!-- Attributen -->
           <xs:element name="aanvraagdatum" minOccurs="0" maxOccurs="1" nillable="true" type="xs:dateTime"/>
           <xs:element name="datumVerzoekEersteVerlenging" minOccurs="0" maxOccurs="1" nillable="true" type="xs:dateTime"/>
           <xs:element name="datumMededelingEersteVerlenging" minOccurs="0" maxOccurs="1" nillable="true" type="xs:dateTime"/>
           <xs:element name="datumVerzoekTweedeVerlenging" minOccurs="0" maxOccurs="1" nillable="true" type="xs:dateTime"/>
           <xs:element name="datumMededelingTweedeVerlenging" minOccurs="0" maxOccurs="1" nillable="true" type="xs:dateTime"/>
           <xs:element name="vervaldatum" minOccurs="0" maxOccurs="1" nillable="true" type="xs:dateTime"/>
+          <!-- Relaties -->
+          <xs:element name="voortgezetVanuit" minOccurs="0" maxOccurs="unbounded" type="referentieLiteral"/>
+          <xs:element name="vervangenVanuit" minOccurs="0" maxOccurs="unbounded" type="referentieLiteral"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>

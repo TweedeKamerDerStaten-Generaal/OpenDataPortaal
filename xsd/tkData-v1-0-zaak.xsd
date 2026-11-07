@@ -14,12 +14,6 @@
     <xs:complexContent>
       <xs:extension base="entiteitType">
         <xs:sequence>
-          <!-- Relaties -->
-          <xs:element name="kamerstukdossier" minOccurs="0" maxOccurs="1" type="referentieLiteral"/>
-          <xs:element name="activiteit" minOccurs="0" maxOccurs="unbounded" type="referentieLiteral"/>
-          <xs:element name="agendapunt" minOccurs="0" maxOccurs="unbounded" type="referentieLiteral"/>
-          <xs:element name="gerelateerdVanuit" minOccurs="0" maxOccurs="unbounded" type="referentieLiteral"/>
-          <xs:element name="vervangenVanuit" minOccurs="0" maxOccurs="unbounded" type="referentieLiteral"/>
           <!-- Attributen -->
           <xs:element name="nummer" minOccurs="0" maxOccurs="1" type="tokenType"/>
           <xs:element name="soort" minOccurs="0" maxOccurs="1" nillable="true" type="tokenType"/>
@@ -38,6 +32,12 @@
           <xs:element name="afgedaan" minOccurs="0" maxOccurs="1" nillable="true" type="booleanType"/>
           <xs:element name="grootProject" minOccurs="0" maxOccurs="1" nillable="true" type="booleanType"/>
           <xs:element name="kabinetsappreciatie" minOccurs="0" maxOccurs="1" nillable="true" type="stringType"/>
+          <!-- Relaties -->
+          <xs:element name="kamerstukdossier" minOccurs="0" maxOccurs="1" type="referentieLiteral"/>
+          <xs:element name="activiteit" minOccurs="0" maxOccurs="unbounded" type="referentieLiteral"/>
+          <xs:element name="agendapunt" minOccurs="0" maxOccurs="unbounded" type="referentieLiteral"/>
+          <xs:element name="gerelateerdVanuit" minOccurs="0" maxOccurs="unbounded" type="referentieLiteral"/>
+          <xs:element name="vervangenVanuit" minOccurs="0" maxOccurs="unbounded" type="referentieLiteral"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>

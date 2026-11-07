@@ -20,7 +20,6 @@
         <xs:sequence>
           <!-- Relaties -->
           <xs:element name="agendapunt" minOccurs="0" maxOccurs="1" type="referentieLiteral"/>
-          <xs:element name="zaak" minOccurs="0" maxOccurs="unbounded" type="referentieLiteral"/>
           <!-- Attributen -->        
           <xs:element name="stemmingsSoort" minOccurs="0" maxOccurs="1" nillable="true" type="tokenType"/>
           <xs:element name="besluitSoort" minOccurs="0" maxOccurs="1" nillable="true" type="tokenType"/>
@@ -28,6 +27,8 @@
           <xs:element name="opmerking" minOccurs="0" maxOccurs="1" nillable="true" type="stringType"/>
           <xs:element name="status" minOccurs="0" maxOccurs="1" nillable="true" type="tokenType"/>
           <xs:element name="agendapuntZaakBesluitVolgorde" minOccurs="0" maxOccurs="1" nillable="true" type="intType"/>
+          <!-- Relaties -->
+          <xs:element name="zaak" minOccurs="0" maxOccurs="unbounded" type="referentieLiteral"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>

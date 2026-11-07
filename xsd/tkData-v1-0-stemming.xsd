@@ -16,8 +16,6 @@
         <xs:sequence>
           <!-- Relaties -->
           <xs:element name="besluit" minOccurs="0" maxOccurs="1" type="referentieLiteral"/>
-          <xs:element name="persoon" minOccurs="0" maxOccurs="1" type="referentieType"/>
-          <xs:element name="fractie" minOccurs="0" maxOccurs="1" type="referentieType"/>
           <!-- Attributen -->
           <xs:element name="soort" minOccurs="0" maxOccurs="1" nillable="true" type="tokenType"/>
           <xs:element name="fractieGrootte" minOccurs="0" maxOccurs="1" nillable="true" type="unsignedIntType"/>
@@ -26,6 +24,9 @@
           <xs:element name="vergissing" minOccurs="0" maxOccurs="1" nillable="true" type="booleanType"/>
           <xs:element name="sidActorLid" minOccurs="0" maxOccurs="1" nillable="true" type="tokenType"/>
           <xs:element name="sidActorFractie" minOccurs="0" maxOccurs="1" nillable="true" type="tokenType"/>
+          <!-- Relaties -->
+          <xs:element name="persoon" minOccurs="0" maxOccurs="1" type="referentieType"/>
+          <xs:element name="fractie" minOccurs="0" maxOccurs="1" type="referentieType"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>

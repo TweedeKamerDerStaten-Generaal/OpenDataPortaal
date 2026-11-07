@@ -26,18 +26,6 @@
     <xs:complexContent>
       <xs:extension base="entiteitType">
         <xs:sequence>
-          <!-- Relaties -->
-          <xs:element name="toegezegdAan" minOccurs="0">
-            <xs:complexType>
-              <xs:sequence>
-                <xs:element name="persoon" minOccurs="0" maxOccurs="1" nillable="true" type="referentieLiteral"/>
-                <xs:element name="fractie" minOccurs="0" maxOccurs="1" nillable="true" type="referentieLiteral"/>
-              </xs:sequence>
-            </xs:complexType>
-          </xs:element>
-          <xs:element name="isHerhalingVan" minOccurs="0" maxOccurs="unbounded" type="referentieBijgewerktLiteral"/>
-          <xs:element name="isAanvullingOp" minOccurs="0" maxOccurs="unbounded" type="referentieBijgewerktLiteral"/>
-          <xs:element name="isWijzigingVan" minOccurs="0" maxOccurs="unbounded" type="referentieBijgewerktLiteral"/>
           <!-- Attributen -->
           <xs:element name="aanmaakdatum" minOccurs="0" maxOccurs="1" nillable="true" type="dateTimeType"/>
           <xs:element name="nummer" minOccurs="0" maxOccurs="1" nillable="true" type="tokenType"/>
@@ -56,6 +44,18 @@
           <xs:element name="kamerbriefNakoming" minOccurs="0" maxOccurs="1" nillable="true" type="stringType"/>
           <xs:element name="ministerie" minOccurs="0" maxOccurs="1" nillable="true" type="stringType"/>
           <xs:element name="tekst" minOccurs="0" maxOccurs="1" nillable="true" type="stringType"/>
+          <!-- Relaties -->
+          <xs:element name="toegezegdAan" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="persoon" minOccurs="0" maxOccurs="1" nillable="true" type="referentieLiteral"/>
+                <xs:element name="fractie" minOccurs="0" maxOccurs="1" nillable="true" type="referentieLiteral"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="isHerhalingVan" minOccurs="0" maxOccurs="unbounded" type="referentieBijgewerktLiteral"/>
+          <xs:element name="isAanvullingOp" minOccurs="0" maxOccurs="unbounded" type="referentieBijgewerktLiteral"/>
+          <xs:element name="isWijzigingVan" minOccurs="0" maxOccurs="unbounded" type="referentieBijgewerktLiteral"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
