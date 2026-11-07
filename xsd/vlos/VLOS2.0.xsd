@@ -245,7 +245,7 @@
   <!--vlostekst-->
   <xs:complexType name="vlostekst">
     <xs:sequence>
-      <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:choice minOccurs="1" maxOccurs="1">
         <xs:element name="alinea" type="alinea" />
         <xs:element name="alineagroep" type="alineagroep" />
       </xs:choice>
@@ -254,7 +254,7 @@
   <!--alinea-->
   <xs:complexType name="alinea">
     <xs:sequence>
-      <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:choice minOccurs="1" maxOccurs="1">
         <xs:element name="alineaitem" type="alineaitem" />
         <xs:element name="lijst" type="lijst" />
       </xs:choice>
@@ -262,7 +262,7 @@
   </xs:complexType>
   <!--alineagroep-->
   <xs:complexType name="alineagroep">
-    <xs:sequence minOccurs="1" maxOccurs="unbounded">
+    <xs:sequence minOccurs="1" maxOccurs="1">
       <xs:element name="alinea" type="alinea" />
     </xs:sequence>
     <xs:attribute name="type" type="alineagroeptype" use="required" />
@@ -270,7 +270,7 @@
   <!--alineaitem-->
   <xs:complexType name="alineaitem" mixed="true">
     <xs:sequence>
-      <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:choice minOccurs="1" maxOccurs="1">
         <xs:element name="dossiernummer" />
         <xs:element name="stuknummer" />
         <xs:element name="nadruk" type="nadruk" />
@@ -279,14 +279,14 @@
   </xs:complexType>
   <!--lijst-->
   <xs:complexType name="lijst">
-    <xs:sequence minOccurs="1" maxOccurs="unbounded">
+    <xs:sequence minOccurs="1" maxOccurs="1">
       <xs:element name="alineaitem" type="alineaitem" />
     </xs:sequence>
   </xs:complexType>
   <!--nadruk-->
   <xs:complexType name="nadruk" mixed="true">
     <xs:sequence>
-      <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:choice minOccurs="1" maxOccurs="1">
         <xs:element name="dossiernummer" />
         <xs:element name="stuknummer" />
         <xs:element name="nadruk" />
@@ -304,14 +304,14 @@
   <!--vlosdocument-->
   <xs:complexType name="vlosdocument">
     <xs:sequence>
-      <xs:element name="rectificatieomschrijving" type="xs:string" minOccurs="0" maxOccurs="1">
+      <xs:element name="rectificatieomschrijving" type="xs:string" minOccurs="1" maxOccurs="1">
         <xs:annotation>
           <xs:documentation>
             Geeft uitleg aan de rectificatie.
           </xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="omschrijving" type="xs:string" minOccurs="0" />
+      <xs:element name="omschrijving" type="xs:string" minOccurs="1" />
       <xs:element name="vergadering" type="vlos2:vergadering" />
     </xs:sequence>
     <xs:attribute name="soort" type="vlos2:vlosdocumentsoort" use="required">
@@ -369,7 +369,7 @@
       <xs:element name="datum" type="xs:dateTime" />
       <xs:element name="aanvangstijd" type="xs:dateTime" />
       <xs:element name="sluiting" type="xs:dateTime" />
-      <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:choice minOccurs="1" maxOccurs="1">
         <xs:element name="activiteit" type="vlos2:activiteit">
           <xs:annotation>
             <xs:documentation>
@@ -379,23 +379,23 @@
         </xs:element>
         <xs:element name="draadboekfragment" type="vlos2:draadboekfragment" />
       </xs:choice>
-      <xs:element name="bijlages" type="vlos2:bijlages" minOccurs="0" maxOccurs="1">
+      <xs:element name="bijlages" type="vlos2:bijlages" minOccurs="1" maxOccurs="1">
         <xs:annotation>
           <xs:documentation>
             bijvoorbeeld: Lijst van ingekomen stukken
           </xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="commissies" type="vlos2:commissies" minOccurs="0" maxOccurs="1" />
-      <xs:element name="fracties" type="vlos2:fracties" minOccurs="0" maxOccurs="1" />
-      <xs:element name="zaken" type="vlos2:zaken" minOccurs="0" maxOccurs="1">
+      <xs:element name="commissies" type="vlos2:commissies" minOccurs="1" maxOccurs="1" />
+      <xs:element name="fracties" type="vlos2:fracties" minOccurs="1" maxOccurs="1" />
+      <xs:element name="zaken" type="vlos2:zaken" minOccurs="1" maxOccurs="1">
         <xs:annotation>
           <xs:documentation>
             bijvoorbeeld wetgeving, motie, etc. zie zaaksoort.
           </xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="sprekers" type="vlos2:sprekers" minOccurs="0" maxOccurs="1" />
+      <xs:element name="sprekers" type="vlos2:sprekers" minOccurs="1" maxOccurs="1" />
     </xs:sequence>
     <xs:attribute name="soort" type="vlos2:vergaderingsoort" use="required" />
     <xs:attribute name="objectid" type="xs:string" use="required" />
@@ -403,7 +403,7 @@
   </xs:complexType>
   <!--activiteitenindex-->
   <xs:complexType name="activiteitenindex">
-    <xs:sequence minOccurs="1" maxOccurs="unbounded">
+    <xs:sequence minOccurs="1" maxOccurs="1">
       <xs:element name="category" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
@@ -416,23 +416,23 @@
       <xs:element name="aanvangstijd" type="xs:dateTime" />
       <xs:element name="eindtijd" type="xs:dateTime" />
       <xs:element name="voortzetting" type="xs:boolean" />
-      <xs:element name="tekst" type="vlos2:vlostekst" minOccurs="0" />
-      <xs:element name="zaken" type="vlos2:zaken" minOccurs="0" maxOccurs="1">
+      <xs:element name="tekst" type="vlos2:vlostekst" minOccurs="1" />
+      <xs:element name="zaken" type="vlos2:zaken" minOccurs="1" maxOccurs="1">
         <xs:annotation>
           <xs:documentation>
             bijvoorbeeld wetgeving, motie, etc. zie zaaksoort.
           </xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="relaties" type="vlos2:relaties" minOccurs="0" maxOccurs="1">
+      <xs:element name="relaties" type="vlos2:relaties" minOccurs="1" maxOccurs="1">
         <xs:annotation>
           <xs:documentation>
             Dit is bedoeld voor toekomstige koppelingen. Bijvoorbeeld tussen plenair en commissie activiteiten.
           </xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="activiteitenindex" type="activiteitenindex" minOccurs="0" />
-      <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="activiteitenindex" type="activiteitenindex" minOccurs="1" />
+      <xs:choice minOccurs="1" maxOccurs="1">
         <xs:element name="draadboekfragment" type="vlos2:draadboekfragment" />
         <xs:element name="activiteithoofd" type="vlos2:activiteithoofd" minOccurs="1">
           <xs:annotation>
@@ -488,11 +488,11 @@
       <xs:element name="onderwerp" type="xs:string" />
       <xs:element name="markeertijdbegin" type="xs:dateTime" />
       <xs:element name="markeertijdeind" type="xs:dateTime" />
-      <xs:element name="tekst" type="vlos2:vlostekst" minOccurs="0" />
-      <xs:element name="zaken" type="vlos2:zaken" minOccurs="0" maxOccurs="1" />
-      <xs:element name="sprekers" type="vlos2:sprekers" minOccurs="0" maxOccurs="1" />
-      <xs:element name="activiteitenindex" type="activiteitenindex" minOccurs="0" />
-      <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="tekst" type="vlos2:vlostekst" minOccurs="1" />
+      <xs:element name="zaken" type="vlos2:zaken" minOccurs="1" maxOccurs="1" />
+      <xs:element name="sprekers" type="vlos2:sprekers" minOccurs="1" maxOccurs="1" />
+      <xs:element name="activiteitenindex" type="activiteitenindex" minOccurs="1" />
+      <xs:choice minOccurs="1" maxOccurs="1">
         <xs:element name="draadboekfragment" type="vlos2:draadboekfragment" />
         <xs:element name="activiteitdeel" type="vlos2:activiteitdeel" />
       </xs:choice>
@@ -510,13 +510,13 @@
   <!--activiteitdeel-->
   <xs:complexType name="activiteitdeel">
     <xs:sequence>
-      <xs:element name="spreker" type="vlos2:spreker" minOccurs="0" />
+      <xs:element name="spreker" type="vlos2:spreker" minOccurs="1" />
       <xs:element name="titel" type="xs:string" />
-      <xs:element name="isnieuw" type="xs:boolean" minOccurs="0" />
+      <xs:element name="isnieuw" type="xs:boolean" minOccurs="1" />
       <xs:element name="markeertijdbegin" type="xs:dateTime" />
       <xs:element name="markeertijdeind" type="xs:dateTime" />
-      <xs:element name="tekst" type="vlos2:vlostekst" minOccurs="0" />
-      <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="tekst" type="vlos2:vlostekst" minOccurs="1" />
+      <xs:choice minOccurs="1" maxOccurs="1">
         <xs:element name="draadboekfragment" type="vlos2:draadboekfragment" />
         <xs:element name="activiteititem" type="vlos2:activiteititem" />
       </xs:choice>
@@ -530,10 +530,10 @@
       <xs:element name="titel" type="xs:string" />
       <xs:element name="markeertijdbegin" type="xs:dateTime" />
       <xs:element name="markeertijdeind" type="xs:dateTime" />
-      <xs:element name="tekst" type="vlos2:vlostekst" minOccurs="0" />
-      <xs:element name="besluitvorm" type="vlos2:besluitvormsoort" minOccurs="0" />
-      <xs:element name="uitslag" type="vlos2:uitslag" minOccurs="0" />
-      <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="tekst" type="vlos2:vlostekst" minOccurs="1" />
+      <xs:element name="besluitvorm" type="vlos2:besluitvormsoort" minOccurs="1" />
+      <xs:element name="uitslag" type="vlos2:uitslag" minOccurs="1" />
+      <xs:choice minOccurs="1" maxOccurs="1">
         <xs:element name="draadboekfragment" type="vlos2:draadboekfragment" />
         <xs:element name="woordvoerder" type="vlos2:woordvoerder" />
         <xs:element name="stemmingen" type="vlos2:stemmingen" />
@@ -551,7 +551,7 @@
       <xs:element name="isvoorzitter" type="xs:boolean" />
       <xs:element name="isdraad" type="xs:boolean" />
       <xs:element name="tekst" type="vlos2:vlostekst" />
-      <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:choice minOccurs="1" maxOccurs="1">
         <xs:element name="draadboekfragment" type="vlos2:draadboekfragment" />
         <xs:element name="interrumpant" type="vlos2:interrumpant" />
       </xs:choice>
@@ -567,20 +567,20 @@
       <xs:element name="isvoorzitter" type="xs:boolean" />
       <xs:element name="isdraad" type="xs:boolean" />
       <xs:element name="tekst" type="vlos2:vlostekst" />
-      <xs:element name="draadboekfragment" type="vlos2:draadboekfragment" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="draadboekfragment" type="vlos2:draadboekfragment" minOccurs="1" maxOccurs="1" />
     </xs:sequence>
     <xs:attribute name="objectid" type="xs:string" use="required" />
   </xs:complexType>
   <!--sprekers-->
   <xs:complexType name="sprekers">
-    <xs:sequence minOccurs="1" maxOccurs="unbounded">
+    <xs:sequence minOccurs="1" maxOccurs="1">
       <xs:element name="spreker" type="vlos2:spreker" />
     </xs:sequence>
   </xs:complexType>
   <!--spreker-->
   <xs:complexType name="spreker">
     <xs:sequence>
-      <xs:element name="fractie" type="vlos2:fractie" minOccurs="0" />
+      <xs:element name="fractie" type="vlos2:fractie" minOccurs="1" />
       <xs:element name="aanhef" type="xs:string" />
       <xs:element name="verslagnaam" type="xs:string" />
       <xs:element name="weergavenaam" type="xs:string" />
@@ -593,7 +593,7 @@
   </xs:complexType>
   <!--fracties-->
   <xs:complexType name="fracties">
-    <xs:sequence minOccurs="1" maxOccurs="unbounded">
+    <xs:sequence minOccurs="1" maxOccurs="1">
       <xs:element name="fractie" type="vlos2:fractie" />
     </xs:sequence>
   </xs:complexType>
@@ -607,7 +607,7 @@
   </xs:complexType>
   <!--commissies-->
   <xs:complexType name="commissies">
-    <xs:sequence minOccurs="1" maxOccurs="unbounded">
+    <xs:sequence minOccurs="1" maxOccurs="1">
       <xs:element name="commissie" type="vlos2:commissie" />
     </xs:sequence>
   </xs:complexType>
@@ -633,10 +633,10 @@
       <xs:element name="markeertijdbegin" type="xs:dateTime" />
       <xs:element name="markeertijdeind" type="xs:dateTime" />
       <xs:element name="isdraad" type="xs:boolean" />
-      <xs:element name="tekst" type="vlos2:vlostekst" minOccurs="0" />
-      <xs:element name="zaken" type="vlos2:zaken" minOccurs="0" />
-      <xs:element name="sprekers" type="vlos2:sprekers" minOccurs="0" />
-      <xs:element name="fracties" type="vlos2:fracties" minOccurs="0" />
+      <xs:element name="tekst" type="vlos2:vlostekst" minOccurs="1" />
+      <xs:element name="zaken" type="vlos2:zaken" minOccurs="1" />
+      <xs:element name="sprekers" type="vlos2:sprekers" minOccurs="1" />
+      <xs:element name="fracties" type="vlos2:fracties" minOccurs="1" />
     </xs:sequence>
     <xs:attribute name="soort" type="vlos2:draadboekfragmentsoort" use="required" />
     <xs:attribute name="objectid" type="xs:string" use="required" />
@@ -645,21 +645,21 @@
   </xs:complexType>
   <!--stemmingen-->
   <xs:complexType name="stemmingen">
-    <xs:sequence minOccurs="1" maxOccurs="unbounded">
+    <xs:sequence minOccurs="1" maxOccurs="1">
       <xs:element name="stemming" type="vlos2:stemming" />
     </xs:sequence>
   </xs:complexType>
   <!--stemming-->
   <xs:complexType name="stemming">
     <xs:sequence>
-      <xs:element name="fractie" type="vlos2:fractie" minOccurs="0" maxOccurs="unbounded" />
-      <xs:element name="hoofd" type="vlos2:spreker" minOccurs="0" maxOccurs="unbounded" />
-      <xs:element name="stem" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="fractie" type="vlos2:fractie" minOccurs="1" maxOccurs="1" />
+      <xs:element name="hoofd" type="vlos2:spreker" minOccurs="1" maxOccurs="1" />
+      <xs:element name="stem" minOccurs="1" maxOccurs="1" />
     </xs:sequence>
   </xs:complexType>
   <!--zaken-->
   <xs:complexType name="zaken">
-    <xs:sequence minOccurs="1" maxOccurs="unbounded">
+    <xs:sequence minOccurs="1" maxOccurs="1">
       <xs:element name="zaak" type="vlos2:zaak" />
     </xs:sequence>
   </xs:complexType>
@@ -672,11 +672,11 @@
       <xs:element name="stuknummer" type="xs:string" />
       <xs:element name="sequeel" type="xs:string" />
       <xs:element name="parlisid" type="xs:string" />
-      <xs:element name="tekst" type="vlos2:vlostekst" minOccurs="0" />
-      <xs:element name="isgewijzigd" type="xs:boolean" minOccurs="0" />
-      <xs:element name="isnadergewijzigd" type="xs:boolean" minOccurs="0" />
-      <xs:element name="isvoldoendeondersteund" type="xs:boolean" minOccurs="0" />
-      <xs:element name="sprekers" type="vlos2:sprekers" minOccurs="0" />
+      <xs:element name="tekst" type="vlos2:vlostekst" minOccurs="1" />
+      <xs:element name="isgewijzigd" type="xs:boolean" minOccurs="1" />
+      <xs:element name="isnadergewijzigd" type="xs:boolean" minOccurs="1" />
+      <xs:element name="isvoldoendeondersteund" type="xs:boolean" minOccurs="1" />
+      <xs:element name="sprekers" type="vlos2:sprekers" minOccurs="1" />
     </xs:sequence>
     <xs:attribute name="volgorde" type="xs:string" use="optional" />
     <xs:attribute name="soort" type="vlos2:zaaksoort" use="required" />
@@ -684,28 +684,28 @@
   </xs:complexType>
   <!--relaties-->
   <xs:complexType name="relaties">
-    <xs:sequence minOccurs="1" maxOccurs="unbounded">
+    <xs:sequence minOccurs="1" maxOccurs="1">
       <xs:element name="relatie" type="vlos2:relatie" />
     </xs:sequence>
   </xs:complexType>
   <!--relatie-->
   <xs:complexType name="relatie">
     <xs:sequence>
-      <xs:element name="bronid" type="xs:string" minOccurs="0" />
-      <xs:element name="titel" type="xs:string" minOccurs="0" />
-      <xs:element name="onderwerp" type="xs:string" minOccurs="0" />
-      <xs:element name="info" type="xs:string" minOccurs="0" />
-      <xs:element name="omschrijving" type="xs:string" minOccurs="0" />
-      <xs:element name="dossiernummer" type="xs:string" minOccurs="0" />
-      <xs:element name="stuknummer" type="xs:string" minOccurs="0" />
-      <xs:element name="sequeel" type="xs:string" minOccurs="0" />
+      <xs:element name="bronid" type="xs:string" minOccurs="1" />
+      <xs:element name="titel" type="xs:string" minOccurs="1" />
+      <xs:element name="onderwerp" type="xs:string" minOccurs="1" />
+      <xs:element name="info" type="xs:string" minOccurs="1" />
+      <xs:element name="omschrijving" type="xs:string" minOccurs="1" />
+      <xs:element name="dossiernummer" type="xs:string" minOccurs="1" />
+      <xs:element name="stuknummer" type="xs:string" minOccurs="1" />
+      <xs:element name="sequeel" type="xs:string" minOccurs="1" />
     </xs:sequence>
     <xs:attribute name="soort" type="xs:string" use="optional" />
     <xs:attribute name="objectid" type="xs:string" use="required" />
   </xs:complexType>
   <!--bijlages-->
   <xs:complexType name="bijlages">
-    <xs:sequence minOccurs="1" maxOccurs="unbounded">
+    <xs:sequence minOccurs="1" maxOccurs="1">
       <xs:element name="bijlage" type="vlos2:bijlage" />
     </xs:sequence>
   </xs:complexType>
@@ -713,8 +713,8 @@
   <xs:complexType name="bijlage">
     <xs:sequence>
       <xs:element name="titel" type="xs:string" />
-      <xs:element name="onderwerp" type="xs:string" minOccurs="0" />
-      <xs:element name="omschrijving" type="xs:string" minOccurs="0" />
+      <xs:element name="onderwerp" type="xs:string" minOccurs="1" />
+      <xs:element name="omschrijving" type="xs:string" minOccurs="1" />
       <xs:element name="tekst" type="vlos2:vlostekst" />
     </xs:sequence>
     <xs:attribute name="soort" type="vlos2:bijlagesoort" use="required" />

@@ -13,16 +13,16 @@
   <xs:complexType name="fractieType" final="#all">
     <xs:complexContent>
       <xs:extension base="downloadEntiteitType">
-        <xs:sequence>
+        <xs:sequence minOccurs="0">
           <!-- Attributen -->
-          <xs:element name="nummer" minOccurs="0" maxOccurs="1" type="tokenType"/>
-          <xs:element name="afkorting" minOccurs="0" maxOccurs="1" nillable="true" type="tokenType"/>
-          <xs:element name="naamNl" minOccurs="0" maxOccurs="1" nillable="true" type="tokenType"/>
-          <xs:element name="naamEn" minOccurs="0" maxOccurs="1" nillable="true" type="tokenType"/>
-          <xs:element name="aantalZetels" minOccurs="0" maxOccurs="1" nillable="true" type="unsignedIntType"/>
-          <xs:element name="aantalStemmen" minOccurs="0" maxOccurs="1" nillable="true" type="unsignedIntType"/>
-          <xs:element name="datumActief" minOccurs="0" maxOccurs="1" nillable="true" type="dateType"/>
-          <xs:element name="datumInactief" minOccurs="0" maxOccurs="1" nillable="true" type="dateType"/>
+          <xs:element name="nummer" minOccurs="1" maxOccurs="1" type="tokenType"/>
+          <xs:element name="afkorting" minOccurs="1" maxOccurs="1" nillable="true" type="tokenType"/>
+          <xs:element name="naamNl" minOccurs="1" maxOccurs="1" nillable="true" type="tokenType"/>
+          <xs:element name="naamEn" minOccurs="1" maxOccurs="1" nillable="true" type="tokenType"/>
+          <xs:element name="aantalZetels" minOccurs="1" maxOccurs="1" nillable="true" type="unsignedIntType"/>
+          <xs:element name="aantalStemmen" minOccurs="1" maxOccurs="1" nillable="true" type="unsignedIntType"/>
+          <xs:element name="datumActief" minOccurs="1" maxOccurs="1" nillable="true" type="dateType"/>
+          <xs:element name="datumInactief" minOccurs="1" maxOccurs="1" nillable="true" type="dateType"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>

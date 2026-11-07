@@ -15,9 +15,9 @@
       <xs:extension base="entiteitType">
         <xs:sequence>
             <!-- Relaties -->
-            <xs:element name="commissie" minOccurs="0" maxOccurs="1" type="referentieLiteral"/>
+            <xs:element name="commissie" minOccurs="1" maxOccurs="1" type="referentieLiteral"/>
             <!-- Attributen -->
-            <xs:element name="gewicht" minOccurs="0" maxOccurs="1" nillable="true" type="intType"/>
+            <xs:element name="gewicht" minOccurs="1" maxOccurs="1" nillable="true" type="intType"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>

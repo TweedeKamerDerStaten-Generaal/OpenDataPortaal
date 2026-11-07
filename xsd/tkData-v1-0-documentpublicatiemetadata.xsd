@@ -17,12 +17,12 @@
           <!-- Relaties -->
           <xs:element name="documentVersie" minOccurs="1" maxOccurs="1" type="referentieLiteral"/>
           <!-- Attributen -->
-          <xs:element name="identifier" minOccurs="0" maxOccurs="1" nillable="true" type="tokenType"/>
-          <xs:element name="documentType" minOccurs="0" maxOccurs="1" nillable="true" type="tokenType"/>
-          <xs:element name="url" minOccurs="0" maxOccurs="1" nillable="true" type="tokenType"/>
-          <xs:element name="fileName" minOccurs="0" maxOccurs="1" nillable="true" type="tokenType"/>
-          <xs:element name="source" minOccurs="0" maxOccurs="1" nillable="true" type="tokenType"/>
-          <xs:element name="publicatieDatum" minOccurs="0" maxOccurs="1" nillable="true" type="dateTimeType"/>
+          <xs:element name="identifier" minOccurs="1" maxOccurs="1" nillable="true" type="tokenType"/>
+          <xs:element name="documentType" minOccurs="1" maxOccurs="1" nillable="true" type="tokenType"/>
+          <xs:element name="url" minOccurs="1" maxOccurs="1" nillable="true" type="tokenType"/>
+          <xs:element name="fileName" minOccurs="1" maxOccurs="1" nillable="true" type="tokenType"/>
+          <xs:element name="source" minOccurs="1" maxOccurs="1" nillable="true" type="tokenType"/>
+          <xs:element name="publicatieDatum" minOccurs="1" maxOccurs="1" nillable="true" type="dateTimeType"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>

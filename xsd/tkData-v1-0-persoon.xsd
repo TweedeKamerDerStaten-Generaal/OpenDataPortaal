@@ -13,25 +13,25 @@
   <xs:complexType name="persoonType" final="#all">
     <xs:complexContent>
       <xs:extension base="downloadEntiteitType">
-        <xs:sequence>
+        <xs:sequence minOccurs="0">
           <!-- Attributen -->
-          <xs:element name="nummer" minOccurs="0" maxOccurs="1" type="tokenType"/>
-          <xs:element name="titels" minOccurs="0" maxOccurs="1" nillable="true" type="tokenType"/>
-          <xs:element name="initialen" minOccurs="0" maxOccurs="1" nillable="true" type="tokenType"/>
-          <xs:element name="tussenvoegsel" minOccurs="0" maxOccurs="1" nillable="true" type="tokenType"/>
-          <xs:element name="achternaam" minOccurs="0" maxOccurs="1" nillable="true" type="tokenType"/>
-          <xs:element name="voornamen" minOccurs="0" maxOccurs="1" nillable="true" type="tokenType"/>
-          <xs:element name="roepnaam" minOccurs="0" maxOccurs="1" nillable="true" type="tokenType"/>
-          <xs:element name="geslacht" minOccurs="0" maxOccurs="1" nillable="true"/>
-          <xs:element name="functie" minOccurs="0" maxOccurs="1" nillable="true" type="tokenType"/>
+          <xs:element name="nummer" minOccurs="1" maxOccurs="1" type="tokenType"/>
+          <xs:element name="titels" minOccurs="1" maxOccurs="1" nillable="true" type="tokenType"/>
+          <xs:element name="initialen" minOccurs="1" maxOccurs="1" nillable="true" type="tokenType"/>
+          <xs:element name="tussenvoegsel" minOccurs="1" maxOccurs="1" nillable="true" type="tokenType"/>
+          <xs:element name="achternaam" minOccurs="1" maxOccurs="1" nillable="true" type="tokenType"/>
+          <xs:element name="voornamen" minOccurs="1" maxOccurs="1" nillable="true" type="tokenType"/>
+          <xs:element name="roepnaam" minOccurs="1" maxOccurs="1" nillable="true" type="tokenType"/>
+          <xs:element name="geslacht" minOccurs="1" maxOccurs="1" nillable="true"/>
+          <xs:element name="functie" minOccurs="1" maxOccurs="1" nillable="true" type="tokenType"/>
           <xs:element name="geboortedatum" minOccurs="0" maxOccurs="1" nillable="true" type="dateType"/>
-          <xs:element name="geboorteplaats" minOccurs="0" maxOccurs="1" nillable="true" type="tokenType"/>
-          <xs:element name="geboorteland" minOccurs="0" maxOccurs="1" nillable="true" type="tokenType"/>
-          <xs:element name="overlijdensdatum" minOccurs="0" maxOccurs="1" nillable="true" type="dateType"/>
-          <xs:element name="overlijdensplaats" minOccurs="0" maxOccurs="1" nillable="true" type="tokenType"/>
-          <xs:element name="woonplaats" minOccurs="0" maxOccurs="1" nillable="true" type="tokenType"/>
-          <xs:element name="land" minOccurs="0" maxOccurs="1" nillable="true" type="tokenType"/>
-          <xs:element name="fractielabel" minOccurs="0" maxOccurs="1" nillable="true" type="tokenType"/>
+          <xs:element name="geboorteplaats" minOccurs="1" maxOccurs="1" nillable="true" type="tokenType"/>
+          <xs:element name="geboorteland" minOccurs="1" maxOccurs="1" nillable="true" type="tokenType"/>
+          <xs:element name="overlijdensdatum" minOccurs="1" maxOccurs="1" nillable="true" type="dateType"/>
+          <xs:element name="overlijdensplaats" minOccurs="1" maxOccurs="1" nillable="true" type="tokenType"/>
+          <xs:element name="woonplaats" minOccurs="1" maxOccurs="1" nillable="true" type="tokenType"/>
+          <xs:element name="land" minOccurs="1" maxOccurs="1" nillable="true" type="tokenType"/>
+          <xs:element name="fractielabel" minOccurs="1" maxOccurs="1" nillable="true" type="tokenType"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>

@@ -13,15 +13,15 @@
   <xs:complexType name="reserveringType" final="#all">
     <xs:complexContent>
       <xs:extension base="entiteitType">
-        <xs:sequence>
+        <xs:sequence minOccurs="0">
           <!-- Attributen -->
-          <xs:element name="nummer" minOccurs="0" maxOccurs="1" nillable="true" type="tokenType"/>
-          <xs:element name="statusCode" minOccurs="0" maxOccurs="1" nillable="true" type="tokenType"/>
-          <xs:element name="statusNaam" minOccurs="0" maxOccurs="1" nillable="true" type="tokenType"/>
-          <xs:element name="activiteitNummer" minOccurs="0" maxOccurs="1" nillable="true" type="tokenType"/>
+          <xs:element name="nummer" minOccurs="1" maxOccurs="1" nillable="true" type="tokenType"/>
+          <xs:element name="statusCode" minOccurs="1" maxOccurs="1" nillable="true" type="tokenType"/>
+          <xs:element name="statusNaam" minOccurs="1" maxOccurs="1" nillable="true" type="tokenType"/>
+          <xs:element name="activiteitNummer" minOccurs="1" maxOccurs="1" nillable="true" type="tokenType"/>
           <!-- Relaties -->
-          <xs:element name="zaal" minOccurs="0" maxOccurs="1" type="referentieLiteral"/>
-          <xs:element name="activiteit" minOccurs="0" maxOccurs="unbounded" type="referentieLiteral"/>
+          <xs:element name="zaal" minOccurs="1" maxOccurs="1" type="referentieLiteral"/>
+          <xs:element name="activiteit" minOccurs="1" maxOccurs="1" type="referentieLiteral"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>

@@ -13,14 +13,14 @@
   <xs:complexType name="commissieZetelVervangerVacatureType" final="#all">
     <xs:complexContent>
       <xs:extension base="entiteitType">
-        <xs:sequence>
+        <xs:sequence minOccurs="0">
           <!-- Relaties -->
-          <xs:element name="commissieZetel" minOccurs="0" maxOccurs="1" type="referentieLiteral"/>
+          <xs:element name="commissieZetel" minOccurs="1" maxOccurs="1" type="referentieLiteral"/>
           <xs:element name="fractie" minOccurs="0" maxOccurs="1" nillable="true" type="referentieLiteral"/>
           <!-- Attributen -->
-          <xs:element name="functie" minOccurs="0" maxOccurs="1" nillable="true" type="tokenType"/>
-          <xs:element name="van" minOccurs="0" maxOccurs="1" nillable="true" type="dateType"/>
-          <xs:element name="totEnMet" minOccurs="0" maxOccurs="1" nillable="true" type="dateType"/>
+          <xs:element name="functie" minOccurs="1" maxOccurs="1" nillable="true" type="tokenType"/>
+          <xs:element name="van" minOccurs="1" maxOccurs="1" nillable="true" type="dateType"/>
+          <xs:element name="totEnMet" minOccurs="1" maxOccurs="1" nillable="true" type="dateType"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>

@@ -20,7 +20,7 @@
 
   <xs:complexType name="annotatieType" final="#all">
     <xs:sequence>
-      <xs:element name="annotatie" minOccurs="0" maxOccurs="unbounded" type="annotatieType"/>
+      <xs:element name="annotatie" minOccurs="1" maxOccurs="1" type="annotatieType"/>
     </xs:sequence>
     <xs:attribute name="naam" use="required" type="xs:string"/>
     <xs:attribute name="waarde" use="optional" type="xs:string"/>
