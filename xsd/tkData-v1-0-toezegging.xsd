@@ -41,7 +41,7 @@
           <xs:element name="functie" minOccurs="0" nillable="true" type="stringType" />
           <xs:element name="status" minOccurs="0" maxOccurs="1" nillable="true" type="toezeggingstatus"/>
           <xs:element name="datumNakoming" minOccurs="0" maxOccurs="1" nillable="true" type="dateTimeType"/>
-          <xs:element name="kamerbriefNakoming" minOccurs="0" maxOccurs="1" nillable="true" type="stringType"/>
+          <xs:element name="kamerbriefNakoming" minOccurs="0" maxOccurs="unbounded" nillable="true" type="referentieLiteral"/>
           <xs:element name="ministerie" minOccurs="0" maxOccurs="1" nillable="true" type="stringType"/>
           <xs:element name="tekst" minOccurs="0" maxOccurs="1" nillable="true" type="stringType"/>
           <!-- Relaties -->
