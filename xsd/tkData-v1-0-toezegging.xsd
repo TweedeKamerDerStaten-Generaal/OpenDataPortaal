@@ -26,8 +26,26 @@
     <xs:complexContent>
       <xs:extension base="entiteitType">
         <xs:sequence>
+          <!-- Attributen -->
+          <xs:element name="aanmaakdatum" minOccurs="1" maxOccurs="1" nillable="true" type="dateTimeType"/>
+          <xs:element name="nummer" minOccurs="1" maxOccurs="1" nillable="true" type="tokenType"/>
+          <xs:element name="activiteit" minOccurs="1" maxOccurs="1" type="referentieLiteral"/>
+          <xs:element name="activiteitNummer" minOccurs="1" maxOccurs="1" nillable="true" type="stringType"/>
+          <xs:element name="naam" minOccurs="1" nillable="true" type="stringType" />
+          <xs:element name="achternaam" minOccurs="1" nillable="true" type="stringType" />
+          <xs:element name="initialen" minOccurs="1" nillable="true" type="stringType" />
+          <xs:element name="tussenvoegsel" minOccurs="1" nillable="true" type="stringType" />
+          <xs:element name="voornaam" minOccurs="1" nillable="true" type="stringType" />
+          <xs:element name="achtervoegsel" minOccurs="1" nillable="true" type="stringType" />
+          <xs:element name="titulatuur" minOccurs="1" nillable="true" type="stringType" />
+          <xs:element name="functie" minOccurs="1" nillable="true" type="stringType" />
+          <xs:element name="status" minOccurs="1" maxOccurs="1" nillable="true" type="toezeggingstatus"/>
+          <xs:element name="datumNakoming" minOccurs="0" maxOccurs="1" nillable="true" type="dateTimeType"/>
+          <xs:element name="kamerbriefNakoming" minOccurs="0" maxOccurs="unbounded" nillable="true" type="referentieLiteral"/>
+          <xs:element name="ministerie" minOccurs="1" maxOccurs="1" nillable="true" type="stringType"/>
+          <xs:element name="tekst" minOccurs="1" maxOccurs="1" nillable="true" type="stringType"/>
           <!-- Relaties -->
-          <xs:element name="toegezegdAan" minOccurs="0">
+          <xs:element name="toegezegdAan" minOccurs="0" maxOccurs="unbounded">
             <xs:complexType>
               <xs:sequence>
                 <xs:element name="persoon" minOccurs="0" maxOccurs="1" nillable="true" type="referentieLiteral"/>
@@ -38,24 +56,6 @@
           <xs:element name="isHerhalingVan" minOccurs="0" maxOccurs="unbounded" type="referentieBijgewerktLiteral"/>
           <xs:element name="isAanvullingOp" minOccurs="0" maxOccurs="unbounded" type="referentieBijgewerktLiteral"/>
           <xs:element name="isWijzigingVan" minOccurs="0" maxOccurs="unbounded" type="referentieBijgewerktLiteral"/>
-          <!-- Attributen -->
-          <xs:element name="aanmaakdatum" minOccurs="0" maxOccurs="1" nillable="true" type="dateTimeType"/>
-          <xs:element name="nummer" minOccurs="0" maxOccurs="1" nillable="true" type="tokenType"/>
-          <xs:element name="activiteit" minOccurs="0" maxOccurs="1" type="referentieLiteral"/>
-          <xs:element name="activiteitNummer" minOccurs="0" maxOccurs="1" nillable="true" type="stringType"/>
-          <xs:element name="naam" minOccurs="0" nillable="true" type="stringType" />
-          <xs:element name="achternaam" minOccurs="0" nillable="true" type="stringType" />
-          <xs:element name="initialen" minOccurs="0" nillable="true" type="stringType" />
-          <xs:element name="tussenvoegsel" minOccurs="0" nillable="true" type="stringType" />
-          <xs:element name="voornaam" minOccurs="0" nillable="true" type="stringType" />
-          <xs:element name="achtervoegsel" minOccurs="0" nillable="true" type="stringType" />
-          <xs:element name="titulatuur" minOccurs="0" nillable="true" type="stringType" />
-          <xs:element name="functie" minOccurs="0" nillable="true" type="stringType" />
-          <xs:element name="status" minOccurs="0" maxOccurs="1" nillable="true" type="toezeggingstatus"/>
-          <xs:element name="datumNakoming" minOccurs="0" maxOccurs="1" nillable="true" type="dateTimeType"/>
-          <xs:element name="kamerbriefNakoming" minOccurs="0" maxOccurs="1" nillable="true" type="stringType"/>
-          <xs:element name="ministerie" minOccurs="0" maxOccurs="1" nillable="true" type="stringType"/>
-          <xs:element name="tekst" minOccurs="0" maxOccurs="1" nillable="true" type="stringType"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>

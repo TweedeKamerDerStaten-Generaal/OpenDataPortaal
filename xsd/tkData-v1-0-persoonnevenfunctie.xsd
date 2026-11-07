@@ -13,7 +13,7 @@
   <xs:complexType name="persoonNevenfunctieType" final="#all">
     <xs:complexContent>
       <xs:extension base="entiteitType">
-        <xs:sequence>
+        <xs:sequence minOccurs="0">
           <!-- Relaties -->
           <xs:element name="persoon" minOccurs="0" maxOccurs="1" type="referentieLiteral"/>
           <!-- Attributen -->
@@ -22,20 +22,20 @@
           <xs:element name="periode" minOccurs="0" maxOccurs="1" nillable="true">
             <xs:complexType>
               <xs:sequence>
-                <xs:element name="van" minOccurs="0" maxOccurs="1" nillable="true" type="datumType"/>
-                <xs:element name="totEnMet" minOccurs="0" maxOccurs="1" nillable="true" type="datumType"/>
+                <xs:element name="van" minOccurs="1" maxOccurs="1" nillable="true" type="datumType"/>
+                <xs:element name="totEnMet" minOccurs="1" maxOccurs="1" nillable="true" type="datumType"/>
               </xs:sequence>
             </xs:complexType>
           </xs:element>
           <xs:element name="vergoeding" minOccurs="0" maxOccurs="1" nillable="true">
             <xs:complexType>
               <xs:sequence>
-                <xs:element name="soort" minOccurs="0" maxOccurs="1" nillable="true" type="tokenType">
+                <xs:element name="soort" minOccurs="1" maxOccurs="1" nillable="true" type="tokenType">
                   <xs:annotation>
                     <xs:documentation>Het soort vergoeding, bijv. bezoldigd, onbezoldigd of onkostenvergoeding.</xs:documentation>
                   </xs:annotation>
                 </xs:element>
-                <xs:element name="toelichting" minOccurs="0" maxOccurs="1" nillable="true" type="tokenType">
+                <xs:element name="toelichting" minOccurs="1" maxOccurs="1" nillable="true" type="tokenType">
                   <xs:annotation>
                     <xs:documentation>Optionele toelichting bij de soort vergoeding.</xs:documentation>
                   </xs:annotation>

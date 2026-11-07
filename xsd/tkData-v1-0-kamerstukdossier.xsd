@@ -13,16 +13,16 @@
   <xs:complexType name="kamerstukdossierType" final="#all">
     <xs:complexContent>
       <xs:extension base="entiteitType">
-        <xs:sequence>
+        <xs:sequence minOccurs="0">
           <!-- Attributen -->
-          <xs:element name="titel" minOccurs="0" maxOccurs="1" nillable="true" type="stringType"/>
-          <xs:element name="citeertitel" minOccurs="0" maxOccurs="1" nillable="true" type="stringType"/>
-          <xs:element name="alias" minOccurs="0" maxOccurs="1" nillable="true" type="stringType"/>
-          <xs:element name="nummer" minOccurs="0" maxOccurs="1" type="xs:unsignedInt"/>
-          <xs:element name="toevoeging" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string"/>
-          <xs:element name="hoogsteVolgnummer" minOccurs="0" maxOccurs="1" type="xs:int"/>
-          <xs:element name="afgesloten" minOccurs="0" maxOccurs="1" nillable="true" type="booleanType"/>
-          <xs:element name="kamer" minOccurs="0" maxOccurs="1" nillable="true" type="stringType"/>
+          <xs:element name="titel" minOccurs="1" maxOccurs="1" nillable="true" type="stringType"/>
+          <xs:element name="citeertitel" minOccurs="1" maxOccurs="1" nillable="true" type="stringType"/>
+          <xs:element name="alias" minOccurs="1" maxOccurs="1" nillable="true" type="stringType"/>
+          <xs:element name="nummer" minOccurs="1" maxOccurs="1" type="xs:unsignedInt"/>
+          <xs:element name="toevoeging" minOccurs="1" maxOccurs="1" nillable="true" type="xs:string"/>
+          <xs:element name="hoogsteVolgnummer" minOccurs="1" maxOccurs="1" type="xs:int"/>
+          <xs:element name="afgesloten" minOccurs="1" maxOccurs="1" nillable="true" type="booleanType"/>
+          <xs:element name="kamer" minOccurs="1" maxOccurs="1" nillable="true" type="stringType"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>

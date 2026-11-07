@@ -67,21 +67,21 @@
   <!-- Complex Types -->
   <xs:complexType name="identificatieType">
     <xs:sequence>
-      <xs:element name="annotatie" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="annotatie" minOccurs="0" maxOccurs="1"/>
     </xs:sequence>
     <xs:attribute name="id" use="required" type="idType" />
   </xs:complexType>
 
   <xs:complexType name="referentieLiteral">
     <xs:sequence>
-      <xs:element name="annotatie" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="annotatie" minOccurs="0" maxOccurs="1"/>
     </xs:sequence>
     <xs:attributeGroup ref="referenceAttributesGroup"/>
   </xs:complexType>
 
   <xs:complexType name="referentieBijgewerktLiteral">
     <xs:sequence>
-      <xs:element name="annotatie" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="annotatie" minOccurs="0" maxOccurs="1"/>
     </xs:sequence>
     <xs:attributeGroup ref="referenceBijgewerktAttributesGroup"/>
   </xs:complexType>

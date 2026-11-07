@@ -17,20 +17,21 @@
   <xs:complexType name="activiteitActorType" final="#all">
     <xs:complexContent>
       <xs:extension base="entiteitType">
-        <xs:sequence>
+        <xs:sequence minOccurs="0">
           <!-- Relaties -->
-          <xs:element name="activiteit" minOccurs="0" maxOccurs="1" type="referentieLiteral"/>
+          <xs:element name="activiteit" minOccurs="1" maxOccurs="1" type="referentieLiteral"/>
+           <!-- Attributen -->
+          <xs:element name="actorNaam" minOccurs="1" maxOccurs="1" nillable="true" type="tokenType"/>
+          <xs:element name="actorFractie" minOccurs="1" maxOccurs="1" nillable="true" type="tokenType"/>
+          <xs:element name="relatie" minOccurs="1" maxOccurs="1" nillable="true" type="tokenType"/>
+          <xs:element name="volgorde" minOccurs="1" maxOccurs="1" nillable="true" type="xs:unsignedInt"/>
+          <xs:element name="functie" minOccurs="1" maxOccurs="1" nillable="true" type="tokenType"/>
+          <xs:element name="spreektijd" minOccurs="1" maxOccurs="1" nillable="true" type="tokenType"/>
+          <xs:element name="sidActor" minOccurs="1" maxOccurs="1" nillable="true" type="tokenType"/>
+          <!-- Relaties -->
           <xs:element name="persoon" minOccurs="0" maxOccurs="1" type="referentieLiteral"/>
           <xs:element name="fractie" minOccurs="0" maxOccurs="1" type="referentieLiteral"/>
           <xs:element name="commissie" minOccurs="0" maxOccurs="1" type="referentieLiteral"/>
-           <!-- Attributen -->
-          <xs:element name="actorNaam" minOccurs="0" maxOccurs="1" nillable="true" type="tokenType"/>
-          <xs:element name="actorFractie" minOccurs="0" maxOccurs="1" nillable="true" type="tokenType"/>
-          <xs:element name="relatie" minOccurs="0" maxOccurs="1" nillable="true" type="tokenType"/>
-          <xs:element name="volgorde" minOccurs="0" maxOccurs="1" nillable="true" type="xs:unsignedInt"/>
-          <xs:element name="functie" minOccurs="0" maxOccurs="1" nillable="true" type="tokenType"/>
-          <xs:element name="spreektijd" minOccurs="0" maxOccurs="1" nillable="true" type="tokenType"/>
-          <xs:element name="sidActor" minOccurs="0" maxOccurs="1" nillable="true" type="tokenType"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>

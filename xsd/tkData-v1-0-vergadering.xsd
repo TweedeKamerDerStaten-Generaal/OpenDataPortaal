@@ -14,17 +14,17 @@
   <xs:complexType name="vergaderingType" final="#all">
     <xs:complexContent>
       <xs:extension base="entiteitType">
-        <xs:sequence>
+        <xs:sequence minOccurs="0">
           <!-- Attributen -->
-          <xs:element name="soort" minOccurs="0" maxOccurs="1" nillable="true" type="tokenType" />
-          <xs:element name="titel" minOccurs="0" maxOccurs="1" nillable="true" type="tokenType"/>
-          <xs:element name="zaal" minOccurs="0" maxOccurs="1" nillable="true" type="tokenType"/>
-          <xs:element name="vergaderjaar" minOccurs="0" maxOccurs="1" nillable="true" type="vergaderjaar"/>
-          <xs:element name="vergaderingNummer" minOccurs="0" maxOccurs="1" nillable="true" type="xs:unsignedInt"/>
-          <xs:element name="datum" minOccurs="0" maxOccurs="1" nillable="true" type="xs:dateTime"/>
-          <xs:element name="aanvangstijd" minOccurs="0" maxOccurs="1" nillable="true" type="xs:dateTime"/>
-          <xs:element name="sluiting" minOccurs="0" maxOccurs="1" nillable="true" type="xs:dateTime"/>
-          <xs:element name="kamer" minOccurs="0" maxOccurs="1" nillable="true" type="tokenType"/>
+          <xs:element name="soort" minOccurs="1" maxOccurs="1" nillable="true" type="tokenType" />
+          <xs:element name="titel" minOccurs="1" maxOccurs="1" nillable="true" type="tokenType"/>
+          <xs:element name="zaal" minOccurs="1" maxOccurs="1" nillable="true" type="tokenType"/>
+          <xs:element name="vergaderjaar" minOccurs="1" maxOccurs="1" nillable="true" type="vergaderjaar"/>
+          <xs:element name="vergaderingNummer" minOccurs="1" maxOccurs="1" nillable="true" type="xs:unsignedInt"/>
+          <xs:element name="datum" minOccurs="1" maxOccurs="1" nillable="true" type="xs:dateTime"/>
+          <xs:element name="aanvangstijd" minOccurs="1" maxOccurs="1" nillable="true" type="xs:dateTime"/>
+          <xs:element name="sluiting" minOccurs="1" maxOccurs="1" nillable="true" type="xs:dateTime"/>
+          <xs:element name="kamer" minOccurs="1" maxOccurs="1" nillable="true" type="tokenType"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>

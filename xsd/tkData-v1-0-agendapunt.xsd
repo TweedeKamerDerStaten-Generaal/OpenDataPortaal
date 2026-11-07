@@ -17,18 +17,18 @@
   <xs:complexType name="agendapuntType" final="#all">
     <xs:complexContent>
       <xs:extension base="entiteitType">
-        <xs:sequence>
+        <xs:sequence minOccurs="0">
           <!-- Relaties -->
-          <xs:element name="activiteit" minOccurs="0" maxOccurs="1" type="referentieLiteral"/>
+          <xs:element name="activiteit" minOccurs="1" maxOccurs="1" type="referentieLiteral"/>
           <!-- Attributen -->          
-          <xs:element name="nummer" minOccurs="0" maxOccurs="1" nillable="true" type="tokenType"/>
-          <xs:element name="onderwerp" minOccurs="0" maxOccurs="1" nillable="true" type="stringType"/>
-          <xs:element name="aanvangstijd" minOccurs="0" maxOccurs="1" nillable="true" type="dateTimeType"/>
-          <xs:element name="eindtijd" minOccurs="0" maxOccurs="1" nillable="true" type="dateTimeType"/>
-          <xs:element name="volgorde" minOccurs="0" maxOccurs="1" nillable="true" type="unsignedIntType"/>
-          <xs:element name="rubriek" minOccurs="0" maxOccurs="1" nillable="true" type="stringType"/>
-          <xs:element name="noot" minOccurs="0" maxOccurs="1" nillable="true" type="stringType"/>
-          <xs:element name="status" minOccurs="0" maxOccurs="1" nillable="true" type="tokenType"/>
+          <xs:element name="nummer" minOccurs="1" maxOccurs="1" nillable="true" type="tokenType"/>
+          <xs:element name="onderwerp" minOccurs="1" maxOccurs="1" nillable="true" type="stringType"/>
+          <xs:element name="aanvangstijd" minOccurs="1" maxOccurs="1" nillable="true" type="dateTimeType"/>
+          <xs:element name="eindtijd" minOccurs="1" maxOccurs="1" nillable="true" type="dateTimeType"/>
+          <xs:element name="volgorde" minOccurs="1" maxOccurs="1" nillable="true" type="unsignedIntType"/>
+          <xs:element name="rubriek" minOccurs="1" maxOccurs="1" nillable="true" type="stringType"/>
+          <xs:element name="noot" minOccurs="1" maxOccurs="1" nillable="true" type="stringType"/>
+          <xs:element name="status" minOccurs="1" maxOccurs="1" nillable="true" type="tokenType"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>

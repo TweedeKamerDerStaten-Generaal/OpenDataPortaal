@@ -13,31 +13,31 @@
   <xs:complexType name="documentType" final="#all">
     <xs:complexContent>
       <xs:extension base="downloadEntiteitType">
-        <xs:sequence>
+        <xs:sequence minOccurs="0">
+          <!-- Attributen -->
+          <xs:element name="soort" minOccurs="1" maxOccurs="1" nillable="true" type="tokenType"/>
+          <xs:element name="documentNummer" minOccurs="1" maxOccurs="1" type="tokenType"/>
+          <xs:element name="titel" minOccurs="1" maxOccurs="1" nillable="true" type="tokenType"/>
+          <xs:element name="onderwerp" minOccurs="1" maxOccurs="1" type="tokenType"/>
+          <xs:element name="datum" minOccurs="1" maxOccurs="1" type="xs:dateTime"/>
+          <xs:element name="volgnummer" minOccurs="1" maxOccurs="1" type="intType"/>
+          <xs:element name="vergaderjaar" type="vergaderjaarType" minOccurs="1" maxOccurs="1"/>
+          <xs:element name="kamer" minOccurs="1" maxOccurs="1" type="intType"/>
+          <xs:element name="citeertitel" minOccurs="1" maxOccurs="1" nillable="true" type="tokenType"/>
+          <xs:element name="alias" minOccurs="1" maxOccurs="1" nillable="true" type="tokenType"/>
+          <xs:element name="datumRegistratie" minOccurs="1" maxOccurs="1" nillable="true" type="xs:dateTime"/>
+          <xs:element name="datumOntvangst" minOccurs="1" maxOccurs="1" nillable="true" type="xs:dateTime"/>
+          <xs:element name="aanhangselnummer" minOccurs="1" maxOccurs="1" nillable="true" type="tokenType"/>
+          <xs:element name="kenmerkAfzender" minOccurs="1" maxOccurs="1" nillable="true" type="tokenType"/>
           <!-- Relaties -->
-          <xs:element name="huidigeDocumentVersie" minOccurs="0" maxOccurs="1" nillable="true" type="referentieLiteral"/>
-          <xs:element name="bronDocument" minOccurs="0" maxOccurs="unbounded" type="referentieLiteral"/>
+          <xs:element name="huidigeDocumentVersie" minOccurs="1" maxOccurs="1" nillable="true" type="referentieLiteral"/>
+          <xs:element name="bronDocument" minOccurs="0" maxOccurs="1" type="referentieLiteral"/>
           <xs:element name="activiteit" minOccurs="0" maxOccurs="unbounded" type="referentieLiteral"/>
-          <xs:element name="agendapunt" minOccurs="0" maxOccurs="unbounded" type="referentieLiteral"/>
+          <xs:element name="agendapunt" minOccurs="0" maxOccurs="1" type="referentieLiteral"/>
           <xs:element name="zaak" minOccurs="0"  maxOccurs="unbounded" type="referentieLiteral"/>
           <xs:element name="kamerstukdossier" minOccurs="0"  maxOccurs="1" type="referentieLiteral"/>
           <!-- Attributen -->
-          <xs:element name="soort" minOccurs="0" maxOccurs="1" nillable="true" type="tokenType"/>
-          <xs:element name="documentNummer" minOccurs="0" maxOccurs="1" type="tokenType"/>
-          <xs:element name="titel" minOccurs="0" maxOccurs="1" nillable="true" type="tokenType"/>
-          <xs:element name="onderwerp" minOccurs="0" maxOccurs="1" type="tokenType"/>
-          <xs:element name="datum" minOccurs="0" maxOccurs="1" type="xs:dateTime"/>
-          <xs:element name="volgnummer" minOccurs="0" maxOccurs="1" type="intType"/>
-          <xs:element name="vergaderjaar" type="vergaderjaarType" minOccurs="0" maxOccurs="1"/>
-          <xs:element name="kamer" minOccurs="0" maxOccurs="1" type="intType"/>
-          <xs:element name="citeertitel" minOccurs="0" maxOccurs="1" nillable="true" type="tokenType"/>
-          <xs:element name="alias" minOccurs="0" maxOccurs="1" nillable="true" type="tokenType"/>
-          <xs:element name="datumRegistratie" minOccurs="0" maxOccurs="1" nillable="true" type="xs:dateTime"/>
-          <xs:element name="datumOntvangst" minOccurs="0" maxOccurs="1" nillable="true" type="xs:dateTime"/>
-          <xs:element name="aanhangselnummer" minOccurs="0" maxOccurs="1" nillable="true" type="tokenType"/>
-          <xs:element name="kenmerkAfzender" minOccurs="0" maxOccurs="1" nillable="true" type="tokenType"/>
-
-          <xs:element name="organisatie" minOccurs="0" maxOccurs="1" type="tokenType"/>
+          <xs:element name="organisatie" minOccurs="1" maxOccurs="1" type="tokenType"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>

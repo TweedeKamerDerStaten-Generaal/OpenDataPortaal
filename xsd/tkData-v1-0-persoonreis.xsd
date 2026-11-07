@@ -13,16 +13,16 @@
   <xs:complexType name="persoonReisType" final="#all">
     <xs:complexContent>
       <xs:extension base="entiteitType">
-        <xs:sequence>
+        <xs:sequence minOccurs="0">
           <!-- Relaties -->
-          <xs:element name="persoon" minOccurs="0" maxOccurs="1" type="referentieLiteral"/>
+          <xs:element name="persoon" minOccurs="1" maxOccurs="1" type="referentieLiteral"/>
           <!-- Attributen -->
-          <xs:element name="doel" minOccurs="0" maxOccurs="1" nillable="true" type="tokenType"/>
-          <xs:element name="bestemming" minOccurs="0" maxOccurs="1" nillable="true" type="tokenType"/>
-          <xs:element name="van" minOccurs="0" maxOccurs="1" nillable="true" type="datumType"/>
-          <xs:element name="totEnMet" minOccurs="0" maxOccurs="1" nillable="true" type="datumType"/>
-          <xs:element name="betaaldDoor" minOccurs="0" maxOccurs="1" nillable="true" type="tokenType"/>
-          <xs:element name="gewicht" minOccurs="0" maxOccurs="1" nillable="true" type="intType"/>
+          <xs:element name="doel" minOccurs="1" maxOccurs="1" nillable="true" type="tokenType"/>
+          <xs:element name="bestemming" minOccurs="1" maxOccurs="1" nillable="true" type="tokenType"/>
+          <xs:element name="van" minOccurs="1" maxOccurs="1" nillable="true" type="datumType"/>
+          <xs:element name="totEnMet" minOccurs="1" maxOccurs="1" nillable="true" type="datumType"/>
+          <xs:element name="betaaldDoor" minOccurs="1" maxOccurs="1" nillable="true" type="tokenType"/>
+          <xs:element name="gewicht" minOccurs="1" maxOccurs="1" nillable="true" type="intType"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>

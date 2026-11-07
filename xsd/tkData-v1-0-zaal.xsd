@@ -15,8 +15,8 @@
       <xs:extension base="entiteitType">
         <xs:sequence>
           <!-- Attributen -->
-			    <xs:element name="naam" minOccurs="0" maxOccurs="1" type="tokenType"/>
-			    <xs:element name="sysCode" minOccurs="0" maxOccurs="1" nillable="true" type="intType"/>
+			    <xs:element name="naam" minOccurs="1" maxOccurs="1" type="tokenType"/>
+			    <xs:element name="sysCode" minOccurs="1" maxOccurs="1" nillable="true" type="intType"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>

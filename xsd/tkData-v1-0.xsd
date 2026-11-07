@@ -29,6 +29,8 @@
   <xs:include schemaLocation="tkData-v1-0-document.xsd"/>
   <xs:include schemaLocation="tkData-v1-0-documentactor.xsd"/>
   <xs:include schemaLocation="tkData-v1-0-documentversie.xsd"/>
+  <xs:include schemaLocation="tkData-v1-0-documentpublicatie.xsd"/>
+  <xs:include schemaLocation="tkData-v1-0-documentpublicatiemetadata.xsd"/>
   <xs:include schemaLocation="tkData-v1-0-fractie.xsd"/>
   <xs:include schemaLocation="tkData-v1-0-fractiezetel.xsd"/>
   <xs:include schemaLocation="tkData-v1-0-fractiezetelpersoon.xsd"/>

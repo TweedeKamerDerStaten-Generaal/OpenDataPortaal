@@ -14,7 +14,7 @@
     <xs:complexContent>
       <xs:extension base="identificatieType">
         <xs:sequence>
-          <xs:element name="bytes" minOccurs="0" maxOccurs="1" nillable="true" type="base64BinaryType"/>
+          <xs:element name="bytes" minOccurs="1" maxOccurs="1" nillable="true" type="base64BinaryType"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
